@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import Search from './planning/Search.js';
-import RestaurantResults from './planning/RestaurantResults.js';
-import EventResults from './planning/EventResults.js';
+import Search from './Search.js';
+import RestaurantResults from './RestaurantResults.js';
+import EventResults from './EventResults.js';
 
 class Results extends Component {
   render() {

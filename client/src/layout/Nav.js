@@ -25,11 +25,13 @@ class Nav extends Component {
         <div>
           <nav className="nav">
             <a href="/">Home</a>
+            <a href="/about">About</a>
+            <a href="/search">Search</a>
             {links}
           </nav>
           <header className="App-header">
             <img src={logo} className="App-logo" alt="logo" />
-            <h1 className="App-title">Welcome to MERN Stack Boilerplate!</h1>
+            <h1 className="App-title">Trip Planning App</h1>
           </header>
         </div>
       );

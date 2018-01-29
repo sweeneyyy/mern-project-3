@@ -9,6 +9,9 @@ import Nav from './layout/Nav.js';
 import Login from './auth/Login.js';
 import Profile from './Profile.js';
 import Signup from './auth/Signup.js';
+import About from './planning/About.js';
+import Results from './planning/Results.js';
+import Search from './planning/Search.js';
 
 class App extends Component {
   constructor(props){
@@ -31,17 +34,17 @@ class App extends Component {
         user: null
       });
     } else {
-      //   Validate the token against the server
+      // Validate the token against the server
       axios.post('/auth/me/from/token', {
         token: token
       }).then(response => {
-        //   Store the token and user
+        // Store the token and user
         localStorage.setItem('mernToken', response.data.token);
         this.setState({
           token: response.data.token,
           user: response.data.user
         });
-        //   Pass User into child components and display main app
+        // Pass User into child components and display main app
       }).catch(err => {
         // Both the JWT and db errors will be caught here
         console.log('cdm', err);
@@ -76,6 +79,8 @@ class App extends Component {
             <div className="space">
               <Flash flashType={this.state.flashType} flash={this.state.flash} setFlash={this.setFlash} cancelFlash={this.cancelFlash} />
               <Route exact path="/" component={Home} />
+              <Route path="/about" component={About} />
+              <Route path="/search" component={Results} />
               <Route path="/login" component={
                 () => (<Login user={this.state.user} setFlash={this.setFlash} updateUser={this.getUser} />)} />
               <Route path="/signup" component={

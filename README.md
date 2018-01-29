@@ -1,9 +1,8 @@
 # Summary
- A full-stack MERN app, originally adapted from [Jenna Badanowski](https://github.com/jbadan/meanImageEditor)!
+ A full-stack MERN app created by Winston Summers, Tony Phan and Sweeney Arnett!
 
 # Demo
 
-[Demo deployed on Heroku](https://mern-thingy.herokuapp.com/)
 
 # Technologies Used
 * Mongodb

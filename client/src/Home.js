@@ -1,10 +1,18 @@
 import React, { Component } from 'react';
+import Search from './planning/Search.js';
+import HowItWorks from './planning/HowItWorks.js';
+import About from './planning/About.js';
+
 
 class Home extends Component {
   render(){
     return (
-        <p>This is a home page. You probably ought to write something here</p>
-      );
+      <div className="Home">
+        <Search />
+        <HowItWorks />
+        <About />
+      </div>
+    );
   }
 }
 

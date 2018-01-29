@@ -20,9 +20,27 @@ var userSchema = new mongoose.Schema({
     required: true,
     minlength: 6,
     maxlength: 99
-  }
+  },
+  restaurant:[
+    {
+      name: String,
+      description: String,
+      siteurl: String,
+      img: String,
+      start: String
+    }
+  ],
+  event: [
+    {
+      name: String,
+      description: String,
+      siteurl: String,
+      img: String,
+      start: String
+    }
+  ],
+  list: [String]
 });
-
 // Override 'toJSON' to prevent the password from being returned with the user
 userSchema.set('toJSON', {
   transform: function(doc, ret, options) {

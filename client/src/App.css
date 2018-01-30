@@ -1,7 +1,7 @@
 /* CUSTOM STYLES */
 nav {
   width: 100%;
-  background-color: #555;
+  background-color: #83A2A7;
   padding: 10px 0;
 }
 
@@ -9,7 +9,7 @@ nav a {
   margin: 10px;
   text-decoration: none;
   font-size: 18px;
-  color: #4ff;
+  color: #fff;
 }
 
 nav a:hover {
@@ -17,7 +17,7 @@ nav a:hover {
 }
 
 .footer {
-  background-color: #555;
+  background-color: #83A2A7;
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -84,11 +84,6 @@ nav a:hover {
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
 .App-header {
   background-color: #222;
   height: 150px;
@@ -104,10 +99,10 @@ nav a:hover {
   font-size: large;
 }
 
-@keyframes App-logo-spin {
+/*@keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
-}
+}*/
 
 /*about me profile*/
 .grid-container {

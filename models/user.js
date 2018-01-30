@@ -26,8 +26,7 @@ var userSchema = new mongoose.Schema({
       name: String,
       description: String,
       siteurl: String,
-      img: String,
-      start: String
+      img: String
     }
   ],
   event: [

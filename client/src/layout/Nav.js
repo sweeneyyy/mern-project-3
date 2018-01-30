@@ -31,7 +31,7 @@ class Nav extends Component {
           </nav>
           <header className="App-header">
             <img src={logo} className="App-logo" alt="logo" />
-            <h1 className="App-title">Trip Planning App</h1>
+            <h1 className="App-title">Venture!</h1>
           </header>
         </div>
       );

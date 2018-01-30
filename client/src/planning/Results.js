@@ -9,6 +9,7 @@ class Results extends Component {
       <div className="Results">
         <h3>Results Page Coming Soon!</h3>
         <Search />
+        <hr />
         <RestaurantResults />
         <EventResults />
       </div>

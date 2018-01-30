@@ -8,13 +8,15 @@ class EventResults extends Component {
       return (<ListItem item={thing} />);
     }) */}
   const Events = () => {
-  	return 
+  	return (
+    <div>Things will go here</div>
+    )
   }
 
     return(
       <div className="EventResults">
         <h3>Events near your area:</h3>
-        <ul classNam="result-list">
+        <ul className="result-list">
         	<Events />
         </ul>
       </div>

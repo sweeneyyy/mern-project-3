@@ -7,7 +7,9 @@ class RestaurantResults extends Component {
       return (<ListItem item={thing} />);
     }) */}
     const Restaurants = () => {
-    	return
+      return (
+    <div>Things will go here</div>
+    )
     }
 
     return(

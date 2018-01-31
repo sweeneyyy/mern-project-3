@@ -30,23 +30,23 @@ class Results extends Component {
   //   location: this.state.query
   // };
 
-  getInfo = (e) => {
-     e.preventDefault();
-     console.log('got to fnc');
-     client.search({location: this.state.query}).then(response => {
-      const result = response.jsonBody;
-      const prettyJson = JSON.stringify(result, null, 4);
-      console.log(prettyJson);
-    }).catch(e => {
-      console.log(e);
-    });
-  }
+  // getInfo = (e) => {
+  //    e.preventDefault();
+  //    console.log('got to fnc');
+  //    client.search({location: this.state.query}).then(response => {
+  //     const result = response.jsonBody;
+  //     const prettyJson = JSON.stringify(result, null, 4);
+  //     console.log(prettyJson);
+  //   }).catch(e => {
+  //     console.log(e);
+  //   });
+  // }
 
   render() {
     return(
       <div className="Results">
         <h3>Results Page</h3>
-        <Search setQuery={this.setQuery} onSubmit={this.getInfo} />
+        <Search setQuery={this.setQuery} />
         <RestaurantResults />
         <EventResults />
       </div>

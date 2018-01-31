@@ -27,7 +27,8 @@ const client = yelp.client(apikey);
 
 
 
-router.get('/results', function(req, res, callback){
+router.post('/results', function(req, res, callback){
+  console.log(req.body);
   const searchRequest = {
     location: req.body.location //search location from front end
   }

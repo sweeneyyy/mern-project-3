@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 
 class Search extends Component {
   constructor(props){
@@ -9,13 +10,24 @@ class Search extends Component {
   }
 
   handleInputChange = (e) => {
-    this.props.setQuery(e.target.value);
+    this.setState({query:e.target.value});
+  }
+
+  perventing = (e) => {
+    e.preventDefault();
+    axios.post('/saved/results', {
+      location: this.state.query
+    }).then((res) => {
+      console.log(res);
+    }).catch((err) => {
+      console.log("error:"+err);
+    })
   }
 
   render() {
     return(
       <div className="Search container">
-      	<form className="form" onSubmit={(e) => this.props.onSubmit(e)} method="get" action="/results/:location">
+      	<form className="form" onSubmit={this.perventing}>
       		<input type="text"
                 name="location"
                 placeholder="Enter Location"

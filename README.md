@@ -20,7 +20,6 @@ POST | /auth/me/from/token | Checks if token is present on browser refresh
 ## Process
 #### White boarding:
 ![alt text](https://i.imgur.com/VM5v76jl.png)
-![alt text](https://i.imgur.com/RM3dY1bl.png)
 ![alt text](https://i.imgur.com/HA1nE8Sl.png)
 ![alt text](https://i.imgur.com/zLla9Tal.png)
 

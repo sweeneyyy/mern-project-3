@@ -9,16 +9,18 @@ class Search extends Component {
     }
   }
 
-  // handleInputChange = (e) => {
-  //   this.props.setQuery(e.target.value);
-  // }
-  
-  preventing = (e) => {
+
+  handleInputChange = (e) => {
+    this.setState({query:e.target.value});
+  }
+
+  perventing = (e) => {
     e.preventDefault();
-    axios.get('/saved/results', {
+    axios.post('/saved/results', {
       location: this.state.query
     }).then((res) => {
-      console.log("got this"+ res);
+      console.log(res);
+
     }).catch((err) => {
       console.log("error:"+err);
     })
@@ -27,8 +29,8 @@ class Search extends Component {
   render() {
     return(
       <div className="Search container">
-        <form className="form" onSubmit={this.preventing}>
-          <input type="text"
+      	<form className="form" onSubmit={this.perventing}>
+      		<input type="text"
                 name="location"
                 placeholder="Enter Location"
                 ref={input => this.search = input}

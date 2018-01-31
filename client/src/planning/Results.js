@@ -9,7 +9,7 @@ import axios from 'axios';
 
 const yelp = require('yelp-fusion');
 
-const client = yelp.client(process.env.YELP_KEY);
+const client = yelp.client(process.env.YELP_CLIENT_KEY);
 
 // const API_URL = 'https://api.yelp.com/v3/events';
 

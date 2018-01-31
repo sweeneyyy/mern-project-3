@@ -17,6 +17,7 @@ class Search extends Component {
       <div className="Search container">
       	<form className="form" onSubmit={(e) => this.props.onSubmit(e)} method="get" action="/results/:location">
       		<input type="text"
+                name="location"
                 placeholder="Enter Location"
                 ref={input => this.search = input}
                 onChange={this.handleInputChange} />

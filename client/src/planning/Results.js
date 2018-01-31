@@ -22,7 +22,7 @@ class Results extends Component {
   setQuery = (searchTerm) => {
      this.setState({ query: searchTerm });
    }
- 
+
    getInfo = (e) => {
      e.preventDefault();
      console.log('got to fnc');
@@ -44,7 +44,6 @@ class Results extends Component {
       <div className="Results">
         <h3>Results Page Coming Soon!</h3>
         <Search setQuery={this.setQuery} onSubmit={this.getInfo} />
-        <hr />
         <RestaurantResults />
         <EventResults />
       </div>

@@ -56,7 +56,7 @@ class Login extends Component {
                        onChange={this.handlePasswordChange}
                   />
                 </div>
-                <input type="submit" value="Login" className="btn-primary" />
+                <button type="submit" value="Login" className="waves-effect waves-teal btn-flat">Login<i class="material-icons left">person</i></button>
               </form>);
     }
     return (

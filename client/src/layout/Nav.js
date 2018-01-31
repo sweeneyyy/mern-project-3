@@ -24,8 +24,8 @@ class Nav extends Component {
         <div>
           <nav className="nav">
             <a href="/">Home</a>
-            <a href="/about">About</a>
-            <Link to="/results">Results</Link>
+            <a href="/#team">Team</a>
+            <Link to="/results">Search</Link>
             {links}
           </nav>
           <header className="App-header">

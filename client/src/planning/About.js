@@ -5,6 +5,7 @@ class About extends Component {
   render() {
     return(
       <div className="About-container">
+      <section id="team">
         <h5>team</h5>
         <div className="container">
         <div className="row">
@@ -49,6 +50,7 @@ class About extends Component {
           </div>
         </div>
       </div>
+      </section>
     </div>
     )
   }

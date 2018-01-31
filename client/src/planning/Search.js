@@ -14,7 +14,7 @@ class Search extends Component {
 
   render() {
     return(
-      <div className="Search">
+      <div className="Search container">
       	<form className="form" onSubmit={(e) => this.props.onSubmit(e)}>
       		<input type="text"
                 placeholder="Enter Location"

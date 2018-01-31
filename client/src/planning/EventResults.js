@@ -15,7 +15,7 @@ class EventResults extends Component {
 
     return(
       <div className="EventResults">
-        <h3>Events near your area:</h3>
+        <h3>Events:</h3>
         <ul className="result-list">
         	<Events />
         </ul>

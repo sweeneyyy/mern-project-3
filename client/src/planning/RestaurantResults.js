@@ -14,7 +14,7 @@ class RestaurantResults extends Component {
 
     return(
       <div className="RestaurantResults">
-        <h3>Restaurant Results Coming Soon!</h3>
+        <h3>Restaurants:</h3>
         <ul>
         	<Restaurants />
         </ul>

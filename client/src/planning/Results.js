@@ -42,7 +42,7 @@ class Results extends Component {
   render() {
     return(
       <div className="Results">
-        <h3>Results Page Coming Soon!</h3>
+        <h3>Results Page</h3>
         <Search setQuery={this.setQuery} onSubmit={this.getInfo} />
         <RestaurantResults />
         <EventResults />

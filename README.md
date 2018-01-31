@@ -1,13 +1,14 @@
 # Summary
 A full-stack MERN app created by Winston Summers, Tony Phan and Sweeney Arnett!
 
-##Demo
-
 ## Technologies Used
 * MongoDb
 * Express
 * React
 * Node.js
+* HTML, CSS, Javascript
+* Materialize
+* Live site on Heroku
 
 ## Backend Routes
 METHOD | URL | Purpose
@@ -22,3 +23,9 @@ POST | /auth/me/from/token | Checks if token is present on browser refresh
 ![alt text](https://i.imgur.com/RM3dY1bl.png)
 ![alt text](https://i.imgur.com/HA1nE8Sl.png)
 ![alt text](https://i.imgur.com/zLla9Tal.png)
+
+## Resources Used
+* Yelp API
+* Trello
+* Draw.io
+* Google Fonts

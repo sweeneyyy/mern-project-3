@@ -7,7 +7,7 @@ var bcrypt = require('bcrypt');
 var jwt = require('jsonwebtoken');
 
 const yelp = require('yelp-fusion');
-const apikey = process.env.CLIENT_KEY;
+const apikey = process.env.YELP_KEY;
 const client = yelp.client(apikey);
 // const API_URL = 'https://api.yelp.com/v3/events';
 
@@ -25,12 +25,13 @@ const client = yelp.client(apikey);
 //   });
 // }
 
-const searchRequest = {
-  location: //search location from front end
-}
 
-router.get('/results/:location', function(req, res, callback){
-  client.search({location: this.state.query}).then(response => {
+
+router.get('/results', function(req, res, callback){
+  const searchRequest = {
+    location: req.body.location //search location from front end
+  }
+  client.search(searchRequest).then(response => {
     const result = response.jsonBody;
     const prettyJson = JSON.stringify(result, null, 4);
     console.log(prettyJson);

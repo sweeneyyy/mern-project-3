@@ -29,7 +29,7 @@ class Nav extends Component {
             {links}
           </nav>
           <header className="App-header">
-            <h1 className="App-title">Venture!</h1>
+            <h1 className="App-title"><i className="large material-icons left">card_travel</i>Venture!</h1>
           </header>
         </div>
       );

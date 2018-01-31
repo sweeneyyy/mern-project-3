@@ -16,11 +16,11 @@ class Search extends Component {
     return(
       <div className="Search">
       	<form className="form" onSubmit={(e) => this.props.onSubmit(e)}>
-      		<input type="text" 
-                placeholder="Where you at?" 
-                ref={input => this.search = input} 
+      		<input type="text"
+                placeholder="Enter Location"
+                ref={input => this.search = input}
                 onChange={this.handleInputChange} />
-      		<input type="submit" value="search" />
+              <button type="submit" value="search" className="waves-effect waves-teal btn-flat">Search<i class="material-icons left">search</i></button>
       	</form>
       </div>
     )

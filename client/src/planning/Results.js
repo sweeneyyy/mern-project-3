@@ -6,8 +6,7 @@ import axios from 'axios';
 // import yelp from 'yelp-fusion';
 // import dotenv from 'dotenv';
 // dotenv.config();
-const yelp = require('yelp-fusion');
-const client = yelp.client();
+// const client = yelp.client();
 
 const API_URL = 'https://api.yelp.com/v3/events';
 

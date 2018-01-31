@@ -85,7 +85,7 @@ nav a:hover {
 }
 
 .App-header {
-  background-color: #222;
+  background-color: #e3c3ba;
   height: 150px;
   padding: 20px;
   color: white;
@@ -108,12 +108,12 @@ nav a:hover {
 .grid-container {
   display: grid;
   grid-template-columns: auto auto auto;
-  background-color: #2196F3;
+  background-color: #e0eac1;
   padding: 25px;
 }
 .profile {
   background-color: rgba(255, 255, 255, 0.8);
-  border: 2px solid rgba(0, 0, 0, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
   margin: 10px;
   padding: 20px;
   font-size: 30px;
@@ -123,7 +123,7 @@ nav a:hover {
 /*how it works*/
 .how-it-works{
   background-color: rgba(255, 255, 255, 0.8);
-  border: 2px solid rgba(0, 0, 0, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
   margin: 10px;
   padding: 20px;
   font-size: 30px;

@@ -6,8 +6,8 @@ var User = require('../models/user');
 var bcrypt = require('bcrypt');
 var jwt = require('jsonwebtoken');
 
-const yelp = require('yelp-fusion');
-const client = yelp.client(process.env.CLIENT_KEY);
+// const yelp = require('yelp-fusion');
+// const client = yelp.client(process.env.CLIENT_KEY);
 const API_URL = 'https://api.yelp.com/v3/events';
 
 //Yelp API call

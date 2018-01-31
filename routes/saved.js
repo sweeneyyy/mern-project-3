@@ -34,10 +34,11 @@ const client = yelp.client(apikey);
 // });
 
 router.get('/results', function(req, res, callback){
-  const info = req.body.categories;
-  console.log("req.body:"+ info);
+  // const info = req.body.categories;
+  console.log(req.body);
   const searchRequest = {
-    location: "Seattle, wa" //search location from front end
+    location: req.body.location, //search location from front end
+    limit: 10
   }
   client.search(searchRequest).then(response => {
     const result = response.jsonBody;

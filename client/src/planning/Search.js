@@ -9,6 +9,7 @@ class Search extends Component {
     }
   }
 
+
   handleInputChange = (e) => {
     this.setState({query:e.target.value});
   }
@@ -19,6 +20,7 @@ class Search extends Component {
       location: this.state.query
     }).then((res) => {
       console.log(res);
+
     }).catch((err) => {
       console.log("error:"+err);
     })
@@ -34,13 +36,11 @@ class Search extends Component {
                 ref={input => this.search = input}
                 onChange={this.handleInputChange} />
               <button type="submit" value="search" className="waves-effect waves-teal btn-flat">Search<i class="material-icons left">search</i></button>
-      	</form>
+        </form>
       </div>
     )
   }
 }
-
-
 
 
 export default Search;

@@ -7,11 +7,8 @@ import axios from 'axios';
 // import dotenv from 'dotenv';
 // dotenv.config();
 
-const yelp = require('yelp-fusion');
-
-const client = yelp.client(process.env.YELP_CLIENT_KEY);
-
-// const API_URL = 'https://api.yelp.com/v3/events';
+// const yelp = require('yelp-fusion');
+// const client = yelp.client(process.env.YELP_CLIENT_KEY);
 
 class Results extends Component {
   constructor(props){
@@ -22,31 +19,23 @@ class Results extends Component {
     }
   }
 
-  setQuery = (searchTerm) => {
-     this.setState({ query: searchTerm });
-   }
 
-  // const searchRequest = {
-  //   location: this.state.query
-  // };
-
-  // getInfo = (e) => {
-  //    e.preventDefault();
-  //    console.log('got to fnc');
-  //    client.search({location: this.state.query}).then(response => {
-  //     const result = response.jsonBody;
-  //     const prettyJson = JSON.stringify(result, null, 4);
-  //     console.log(prettyJson);
-  //   }).catch(e => {
-  //     console.log(e);
-  //   });
-  // }
+  handleSubmit = (e) => {
+    e.preventDefault();
+    console.log('got to fnc');
+    axios.post('/planning/Results', {
+      location: this.state.query
+    }).then((result) => {
+      this.setState({ })
+    })
+      
+  }
 
   render() {
     return(
       <div className="Results">
         <h3>Results Page</h3>
-        <Search setQuery={this.setQuery} />
+        <Search setQuery={this.setQuery} onSubmit={this.handleSubmit} />
         <RestaurantResults />
         <EventResults />
       </div>

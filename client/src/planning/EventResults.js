@@ -9,7 +9,9 @@ class EventResults extends Component {
     }) */}
   const Events = () => {
   	return (
-    <div>Things will go here</div>
+    <div>
+          events
+    </div>
     )
   }
 

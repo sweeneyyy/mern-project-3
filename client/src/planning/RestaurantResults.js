@@ -1,38 +1,27 @@
 import React, { Component } from 'react';
+import BusinessResults from './BusinessResults.js';
 
 class RestaurantResults extends Component {
-  render() {
-
-  	{/*const toDoItems = this.props.items.map(thing => {
-      return (<ListItem item={thing} />);
-    }) */}
-    const Restaurants = () => {
-      return (
-    <div>Things will go here</div>
-    )
+  render(){
+    var names = [];
+    var businesses = this.props.businesses;
+    if(businesses.length < 1){
+      names = <h3>Do a search to get results!</h3>
+    }else{
+      names = businesses.map((business) => {
+        console.log(business.name);
+        <BusinessResults name={business.name} />
+      });
     }
-
-    return(
-      <div className="RestaurantResults">
-        <h3>Restaurants:</h3>
-        <ul>
-        	<Restaurants />
-        </ul>
-      </div>
-    )
-  }
-}
-
-
-class ListItem extends Component {
-	render(){
 		return(
-			<li>
-				<h5>{this.props.item.name}</h5>
-				<p>{this.props.item.eventsite}</p>
-				<img src={this.props.item.img} alt={this.props.item.name} />
-				<p>{this.props.item.description}</p>
-			</li>
+      <div className="results-container">
+        <h1>Results!</h1>
+			<ul>
+        {names}
+        {console.log(this.props.businesses)}
+        {console.log(names)}
+			</ul>
+    </div>
 		);
 	}
 }

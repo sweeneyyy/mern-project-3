@@ -15,10 +15,26 @@ class Results extends Component {
     super(props)
     this.state = {
       query: '',
-      results:[]
+      businesses:[]
     }
+    this.handleInputChange = this.handleInputChange.bind(this);
+  }
+  handleInputChange = (e) => {
+    this.setState({query: e.target.value});
   }
 
+
+  preventing = (e) => {
+    e.preventDefault();
+    axios.post('/saved/results', {
+      location: this.state.query,
+    }).then((res) => {
+      console.log(res.data);
+      this.setState({businesses: res.data.businesses});
+    }).catch((err) => {
+      console.log("error:", err);
+    })
+  }
   // handleSubmit = (e) => {
   //   e.preventDefault();
   //   console.log('got to fnc');
@@ -32,11 +48,22 @@ class Results extends Component {
 
 
   render() {
+var results;
+var res=this.state.businesses
+    if(this.state.businesses){
+      results = res.map((b)=>{
+        <li>b</li>
+      });
+    }else{
+      results = <p>none</p>
+      console.log(this.state.businesses);
+    }
     return(
       <div className="Results">
         <h3>Results Page</h3>
-        <Search setQuery={this.setQuery} onSubmit={this.handleSubmit} />
-        <RestaurantResults />
+        {results}
+        <Search query={this.state.query} handleInputChange={(event) => this.handleInputChange(event)} preventing={this.preventing} onSubmit={this.handleSubmit} />
+        <RestaurantResults businesses={this.state.businesses}/>
         <EventResults />
       </div>
     )

@@ -9,17 +9,19 @@ class RestaurantResults extends Component {
       names = <h3>Do a search to get results!</h3>
     }else{
       names = businesses.map((business) => {
-        return (<BusinessResults business={business} />);
+        return (<BusinessResults business={business} saveClick={this.props.saveClick} />);
       });
     }
 		return(
-      <div className="results-container">
+      <div className="results-container container">
         <h1>Results!</h1>
-			<ul>
-        {names}
-        {/*}{console.log(this.props.businesses)}
-        {console.log(names)}*/}
-			</ul>
+        <div className="row">
+    			<ul className="col s12 m4">
+            {names}
+            {/*}{console.log(this.props.businesses)}
+            {console.log(names)}*/}
+    			</ul>
+      </div>
     </div>
 		);
 	}

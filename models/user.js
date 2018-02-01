@@ -24,9 +24,10 @@ var userSchema = new mongoose.Schema({
   restaurant:[
     {
       name: String,
-      description: String,
       siteurl: String,
-      img: String
+      imgurl: String,
+      rating: String,
+      categories: String
     }
   ],
   event: [
@@ -46,7 +47,10 @@ userSchema.set('toJSON', {
     var returnJson = {
       id: ret._id,
       email: ret.email,
-      name: ret.name
+      name: ret.name,
+      restaurant: ret.restaurant,
+      event: ret.event,
+      list: ret.list
     };
     return returnJson;
   }

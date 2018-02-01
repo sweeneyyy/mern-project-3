@@ -4,20 +4,15 @@ class BusinessResults extends Component{
   render(){
     return(
       <div className="container">
-      <li>
-        <div>
+        <li>
           <h5>{this.props.business.name}</h5>
-          <a href={this.props.business.url}>Look on Yelp!</a>
-        </div>
-        <div>
           <img src={this.props.business.image_url} alt={this.props.business.name} />
-        </div>
-        <div>
           <p>Rating: {this.props.business.rating}</p>
-          <p>Categories: <bold>{this.props.business.categories[0].title}</bold></p>
-        </div>
-        <hr />
-      </li>
+          <p>Category: <bold>{this.props.business.categories[0].title}</bold></p>
+          <a href={this.props.business.url}>Look on Yelp!</a>
+          <input type="button" value="save" id={this.props.business.id} onClick={this.props.saveClick} />
+          <hr />
+        </li>
       </div>
     );
   }

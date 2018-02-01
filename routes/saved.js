@@ -9,7 +9,7 @@ var jwt = require('jsonwebtoken');
 const yelp = require('yelp-fusion');
 const apikey = process.env.API_KEY;
 const client = yelp.client(apikey);
-console.log(client)
+
 
 router.post('/results', function(req, res, callback){
   console.log("req.body is", req.body);
@@ -27,6 +27,28 @@ router.post('/results', function(req, res, callback){
   });
 });
 
+
+router.post('/results', function(req, res, callback){
+  console.log('backend', req.body)
+  var userId = req.body.user.id;
+  User.findById(userId)
+    .exec(function(err, foundUser){
+      console.log(foundUser);
+      if(err){
+        res.status(500).json({error: err.message});
+      }else{
+        foundUser.restaurant.push({
+          "name": req.body.business.name,
+          "url": req.body.business.url,
+          "imageurl": req.body.business.image_url,
+          "rating": req.body.business.rating,
+          "category": req.body.business
+        });
+        foundUser.save();
+        res.status(201).json(foundUser);
+      }
+    })
+  })
 
 //POST - save restaurant or event to db
 

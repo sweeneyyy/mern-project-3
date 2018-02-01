@@ -46,10 +46,33 @@ class Results extends Component {
 
   // }
 
+  saveClick = (e) => {
+    e.preventDefault();
+    console.log('save click reached');
+    let businessToSave;
+    for(let i = 0; i < this.state.businesses.length; i++){
+      if(this.state.businesses[i].id === e.target.id){
+        businessToSave = this.state.businesses[i];
+        console.log('for loop', this.state.businesses[i]);
+      }
+    }
+    console.log('businessToSave', businessToSave);
+    console.log('user', this.props.user);
+
+    axios.post('/saved/results', {
+      business: businessToSave,
+      user: this.props.user,
+    }).then((res) => {
+      console.log("response data", res.data);
+    }).catch((err) => {
+      console.log("err", err);
+    })
+  }
 
   render() {
-var results;
-var res=this.state.businesses
+    var results;
+    var res=this.state.businesses
+    
     if(this.state.businesses){
       results = res.map((b)=>{
         <li>b</li>
@@ -63,7 +86,7 @@ var res=this.state.businesses
         <h3>Results Page</h3>
         {results}
         <Search query={this.state.query} handleInputChange={(event) => this.handleInputChange(event)} preventing={this.preventing} onSubmit={this.handleSubmit} />
-        <RestaurantResults businesses={this.state.businesses} />
+        <RestaurantResults businesses={this.state.businesses} saveClick={this.saveClick} />
         <EventResults />
       </div>
     )

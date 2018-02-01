@@ -8,7 +8,7 @@ class RestaurantResults extends Component {
     if(businesses.length < 1){
       names = <h3>Do a search to get results!</h3>
     }else{
-      names = businesses.map((business) => {
+      names = businesses.map(business => {
         console.log(business.name);
         <BusinessResults name={business.name} />
       });

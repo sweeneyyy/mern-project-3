@@ -9,7 +9,7 @@ var jwt = require('jsonwebtoken');
 const yelp = require('yelp-fusion');
 const apikey = process.env.API_KEY;
 const client = yelp.client(apikey);
-
+console.log(client)
 
 router.post('/results', function(req, res, callback){
   console.log("req.body is", req.body);

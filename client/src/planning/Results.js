@@ -63,7 +63,7 @@ var res=this.state.businesses
         <h3>Results Page</h3>
         {results}
         <Search query={this.state.query} handleInputChange={(event) => this.handleInputChange(event)} preventing={this.preventing} onSubmit={this.handleSubmit} />
-        <RestaurantResults businesses={this.state.businesses}/>
+        <RestaurantResults businesses={this.state.businesses} />
         <EventResults />
       </div>
     )

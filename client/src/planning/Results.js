@@ -19,17 +19,17 @@ class Results extends Component {
     }
   }
 
+  handleSubmit = (e) => {
+    e.preventDefault();
+    console.log('got to fnc');
+    axios.post('/planning/Results', {
+      location: this.state.query
+    }).then((result) => {
+      this.setState({ })
+    })
 
-  // handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   console.log('got to fnc');
-  //   axios.post('/planning/Results', {
-  //     location: this.state.query
-  //   }).then((result) => {
-  //     this.setState({ })
-  //   })
-      
-  // }
+  }
+
 
   render() {
     return(

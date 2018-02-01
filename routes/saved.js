@@ -14,7 +14,7 @@ const client = yelp.client(apikey);
 router.post('/results', function(req, res, callback){
   console.log("req.body is", req.body);
   const searchRequest = {
-    location: req.body.location,  //search location from front end
+    location: req.body.location, //search location from front end
     limit: 10
   }
   client.search(searchRequest).then(response => {
@@ -29,10 +29,6 @@ router.post('/results', function(req, res, callback){
 
 
 //POST - save restaurant or event to db
-
-
-
-
 
 
 module.exports = router;

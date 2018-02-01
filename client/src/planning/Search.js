@@ -1,12 +1,24 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
+// const RestaurantNames = (props) => {
+//   //map the results to an array of <li> tags
+//   const options = props.names.map((item)=>(
+//     <li key={item.id}>
+//       <p>{item.name}</p>
+//     </li>
+//   ))
+//   //return an array of <li> tags inside of a <ul> tag
+//   console.log(options);
+//   return <ul>{options}</ul>
+// }
+
 class Search extends Component {
   constructor(props){
     super(props)
     this.state = {
       query: '',
-      name: []
+      names: []
     }
   }
 
@@ -14,6 +26,7 @@ class Search extends Component {
   handleInputChange = (e) => {
     this.setState({query: e.target.value});
   }
+
 
   preventing = (e) => {
     e.preventDefault();
@@ -24,8 +37,7 @@ class Search extends Component {
       this.setState({name: res.data.businesses[0].name});
       console.log("name...", this.state.name);
       console.log("got to then", this.state.query)
-      this.setState({ results: e.prettyJson})
-      console.log(this.state.results);
+     
     }).catch((err) => {
       console.log("error:", err);
     })
@@ -40,7 +52,7 @@ class Search extends Component {
                 placeholder="Enter Location"
                 ref={input => this.search = input}
                 onChange={this.handleInputChange} />
-              <button type="submit" value="search" className="waves-effect waves-teal btn-flat">Search<i class="material-icons left">search</i></button>
+            <button type="submit" value="search" className="waves-effect waves-teal btn-flat">Search<i class="material-icons left">search</i></button>
         </form>
       </div>
     )

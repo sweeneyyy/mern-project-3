@@ -19,7 +19,6 @@ class Results extends Component {
     }
   }
 
-
   handleSubmit = (e) => {
     e.preventDefault();
     console.log('got to fnc');
@@ -30,6 +29,7 @@ class Results extends Component {
     })
 
   }
+
 
   render() {
     return(

@@ -9,8 +9,7 @@ class RestaurantResults extends Component {
       names = <h3>Do a search to get results!</h3>
     }else{
       names = businesses.map((business) => {
-        console.log(business.name);
-        <BusinessResults name={business.name} />
+        return (<BusinessResults name={business.name} />);
       });
     }
 		return(
@@ -18,8 +17,8 @@ class RestaurantResults extends Component {
         <h1>Results!</h1>
 			<ul>
         {names}
-        {console.log(this.props.businesses)}
-        {console.log(names)}
+        {/*}{console.log(this.props.businesses)}
+        {console.log(names)}*/}
 			</ul>
     </div>
 		);

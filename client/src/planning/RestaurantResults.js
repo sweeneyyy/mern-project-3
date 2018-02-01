@@ -9,7 +9,7 @@ class RestaurantResults extends Component {
       names = <h3>Do a search to get results!</h3>
     }else{
       names = businesses.map((business) => {
-        return (<BusinessResults name={business.name} />);
+        return (<BusinessResults business={business} />);
       });
     }
 		return(

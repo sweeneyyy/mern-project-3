@@ -28,7 +28,7 @@ class Results extends Component {
     }).then((result) => {
       this.setState({ })
     })
-      
+
   }
 
   render() {

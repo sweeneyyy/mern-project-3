@@ -8,7 +8,7 @@ class Nav extends Component {
     if(this.props.user){
       links = (
         <span>
-          <Link to="/profile">Profile</Link>
+          <Link to="/saved/profile">Profile</Link>
           <Logout updateUser={this.props.updateUser} />
         </span>);
     }

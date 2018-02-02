@@ -6,7 +6,7 @@ class RestaurantResults extends Component {
     var names = [];
     var businesses = this.props.businesses;
     if(businesses.length < 1){
-      names = <h3>Do a search to get results!</h3>
+      names = <p>Search to get results!</p>
     }else{
       names = businesses.map((business) => {
         return (<BusinessResults business={business} saveClick={this.props.saveClick} />);
@@ -14,7 +14,6 @@ class RestaurantResults extends Component {
     }
 		return(
       <div className="results-container container">
-        <h1>Results!</h1>
         <div className="row">
     			<ul className="col s12 m4">
             {names}

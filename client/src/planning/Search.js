@@ -1,16 +1,5 @@
 import React, { Component } from 'react';
 
-// const RestaurantNames = (props) => {
-//   //map the results to an array of <li> tags
-//   const options = props.names.map((item)=>(
-//     <li key={item.id}>
-//       <p>{item.name}</p>
-//     </li>
-//   ))
-//   //return an array of <li> tags inside of a <ul> tag
-//   console.log(options);
-//   return <ul>{options}</ul>
-// }
 
 class Search extends Component {
   // constructor(props){
@@ -20,24 +9,7 @@ class Search extends Component {
   //     businesses: []
   //   }
   // }
-  //
-  //
-  // handleInputChange = (e) => {
-  //   this.setState({query: e.target.value});
-  // }
-  //
-  //
-  // preventing = (e) => {
-  //   e.preventDefault();
-  //   axios.post('/saved/results', {
-  //     location: this.state.query,
-  //   }).then((res) => {
-  //     console.log(res.data);
-  //     this.setState({businesses: res.data.buisnesses});
-  //   }).catch((err) => {
-  //     console.log("error:", err);
-  //   })
-  // }
+
 
   render() {
     return(

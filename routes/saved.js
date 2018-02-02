@@ -10,7 +10,7 @@ const yelp = require('yelp-fusion');
 const apikey = process.env.API_KEY;
 const client = yelp.client(apikey);
 
-
+//Yelp API call to get restaurant results
 router.post('/results', function(req, res, callback){
   console.log("req.body is", req.body);
   const searchRequest = {
@@ -36,7 +36,7 @@ router.post('/results/restaurantsaved', function(req, res, callback){
       console.log('foundUser', foundUser);
       if(err){
         res.status(500).json({error: err.message});
-      }else{
+      } else {
         foundUser.restaurant.push({
           "name": req.body.business.name,
           "url": req.body.business.url,
@@ -57,7 +57,22 @@ router.post('/results/restaurantsaved', function(req, res, callback){
   })
 })
 
-//POST - save restaurant or event to db
+router.get('/profile/:id', function(req, res, callback){
+  console.log('get route reached for saved rests');
+  // res.json({});
+  User.findById(req.params.id)
+  .exec(function(err, user){
+    if(err) {return console.log('error', err); }
+    console.log(user);
+    res.send(user);
+  });
+});
+
+
+
+
+
+
 
 
 module.exports = router;

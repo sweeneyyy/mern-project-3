@@ -3,12 +3,6 @@ import Search from './Search.js';
 import RestaurantResults from './RestaurantResults.js';
 import EventResults from './EventResults.js';
 import axios from 'axios';
-// import yelp from 'yelp-fusion';
-// import dotenv from 'dotenv';
-// dotenv.config();
-
-// const yelp = require('yelp-fusion');
-// const client = yelp.client(process.env.YELP_CLIENT_KEY);
 
 class Results extends Component {
   constructor(props){
@@ -35,16 +29,7 @@ class Results extends Component {
       console.log("error:", err);
     })
   }
-  // handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   console.log('got to fnc');
-  //   axios.post('/planning/Results', {
-  //     location: this.state.query
-  //   }).then((result) => {
-  //     this.setState({ })
-  //   })
-
-  // }
+  
 
   saveClick = (e) => {
     e.preventDefault();
@@ -82,7 +67,7 @@ class Results extends Component {
       console.log(this.state.businesses);
     }
     return(
-      <div className="Results">
+      <div className="container Results">
         <h3>Results Page</h3>
         {results}
         <Search query={this.state.query} handleInputChange={(event) => this.handleInputChange(event)} preventing={this.preventing} onSubmit={this.handleSubmit} />

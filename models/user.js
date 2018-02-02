@@ -24,10 +24,10 @@ var userSchema = new mongoose.Schema({
   restaurant:[
     {
       name: String,
-      siteurl: String,
+      url: String,
       imgurl: String,
       rating: String,
-      categories: String
+      category: String
     }
   ],
   event: [

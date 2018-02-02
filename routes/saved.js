@@ -33,7 +33,7 @@ router.post('/results/restaurantsaved', function(req, res, callback){
   var userId = req.body.user.id;
   User.findById(userId)
     .exec(function(err, foundUser){
-      console.log('foundUser', foundUser);
+      console.log("my current user", foundUser);
       if(err){
         res.status(500).json({error: err.message});
       } else {
@@ -74,5 +74,12 @@ router.get('/profile/:id', function(req, res, callback){
 
 
 
+// app.get('/', function (req, res) {
+//   User.findAll().populate('name')
+//     .exec(function(err, name) {
+//       if (err) { return console.log("index error: " + err); }
+//       res.json(name);
+//   });
+// });
 
 module.exports = router;

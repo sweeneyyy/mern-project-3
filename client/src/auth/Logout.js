@@ -19,12 +19,12 @@ class Logout extends Component {
   }
 
   render() {
-   if(this.state.redirect){
-    return (<Redirect to="/" />);
-   }
-   else {
-     return (<a href='/' onClick={this.handleLogout}>Logout</a>);
-   }
+    if(this.state.redirect){
+      return (<Redirect to="/" />);
+    }
+    else {
+      return (<a href='/' onClick={this.handleLogout}>Logout</a>);
+    }
   }
 }
 

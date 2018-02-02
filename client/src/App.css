@@ -87,7 +87,7 @@ nav a:hover {
 
 .App-header {
   background-color: #acc55d;
-  height: 150px;
+  height: 400px;
   padding: 20px;
   color: white;
 }
@@ -100,7 +100,12 @@ nav a:hover {
   font-size: large;
 }
 
-
+/*header*/
+header{
+  background-image: url('https://images.studentuniverse.com/new/suwebui/photos/top/plane-header.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
 /*about me profile*/
 .profile {
   background-color: rgba(255, 255, 255, 0.8);
@@ -116,8 +121,9 @@ nav a:hover {
 }
 
 /*how it works*/
-.About-container {
+.About-containe-how {
   margin-bottom: 100px;
+  background-color: rgba(255, 255, 255, 0.8);
 }
 
 .how-it-works{
@@ -136,6 +142,11 @@ nav a:hover {
   font-size: 90px;
   padding-bottom: 10px;
 }
+
+.how{
+  font-size: 100px;
+  text-align: center;
+  
 /*restaurant results*/
 .restaurant-results img{
   max-height: 300px;

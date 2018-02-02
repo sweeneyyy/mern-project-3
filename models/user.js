@@ -21,6 +21,7 @@ var userSchema = new mongoose.Schema({
     minlength: 6,
     maxlength: 99
   },
+  
   restaurant:[
     {
       name: String,

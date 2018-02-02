@@ -5,7 +5,7 @@ class List extends Component {
     super(props)
     this.state = {
       error: '',
-      toPack: [],
+      toPack: ["socks","shoes","food"],
       newItem: ''
     }
   }
@@ -26,6 +26,7 @@ class List extends Component {
 }
 add = (e) => {
     e.preventDefault();
+    console.log('add func', this.state)
     if(this.state.newItem){
     let toPackLocal = this.state.toPack;
     toPackLocal.push(this.state.newItem)
@@ -37,13 +38,13 @@ add = (e) => {
 }
 newItemChange = (e) => {
   this.setState({ newItem: e.target.value });
+  console.log('change', this.state.newItem)
 }
   render() {
     return(
-      <div className="PackingList">
+      <div className="PackingList container">
         <h2 className="packing-list-title">Packing List</h2>
-        <packingList item={this.state.packingList} onDelete={this.deleteItem}/>
-        <p className='text-danger'>{this.state.error}</p>
+        <packingList items={this.state.toPack} onDelete={this.deleteItem}/>
         <form onSubmit={this.add}>
           <input type='text' className='form-control' placeholder='add something to pack' onChange={this.newItemChange} value={this.state.newItem} />
         </form>

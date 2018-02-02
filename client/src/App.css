@@ -135,9 +135,11 @@ header{
   font-size: 20px;
   text-align: center;
 }
+
 .profile{
   padding: 100px, 0px, 100px, 0px;
 }
+
 .App-title{
   font-size: 90px;
   padding-bottom: 10px;
@@ -146,7 +148,8 @@ header{
 /*.how{
   font-size: 100px;
   text-align: center;
-  */
+
+}
 /*restaurant results*/
 .restaurant-results img{
   max-height: 300px;

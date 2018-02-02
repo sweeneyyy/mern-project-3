@@ -59,7 +59,7 @@ class Results extends Component {
     console.log('businessToSave', businessToSave);
     console.log('user', this.props.user);
 
-    axios.post('/saved/results', {
+    axios.post('/saved/results/restaurantsaved', {
       business: businessToSave,
       user: this.props.user,
     }).then((res) => {

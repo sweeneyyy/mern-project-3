@@ -40,11 +40,11 @@ router.post('/results/restaurantsaved', function(req, res, callback){
         foundUser.restaurant.push({
           "name": req.body.business.name,
           "url": req.body.business.url,
-          "imageurl": req.body.business.image_url,
+          "imgurl": req.body.business.image_url,
           "rating": req.body.business.rating,
-          "category": req.body.business
+          "category": req.body.business.categories[0].title
         });
-        console.log('#### Found User After PUsh', foundUser);//this console log works
+        console.log('#### Found User After Push', foundUser);//this console log works
         foundUser.save(function(err){
           if(err){
             console.log(err);

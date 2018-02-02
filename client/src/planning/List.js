@@ -10,23 +10,24 @@ class List extends Component {
       newItem: ''
     }
   }
-
+  //Clear entire packing list
   clear = () => {
     this.setState({ toPack: [] });
   }
-
-  deleteItem =(item) => {
-    console.log('parent Component delete fucntion');
+  //Delete a single item from the list
+  deleteItem = (item) => {
+    console.log('parent Component delete function');
     console.log(item);
+    // the items in the packing list
     let toPackLocal = this.state.toPack;
-    //idexOf returns in to array. you can then slice
+    //indexOf returns in to array. you can then slice
     let itemIndex = toPackLocal.indexOf(item);
     if(itemIndex >= 0){
       toPackLocal.splice(itemIndex, 1);
-      this.setState({ toPack:toPackLocal });
+      this.setState({ toPack:  toPackLocal });
     }
   }
-
+  //Add new item to the list
   add = (e) => {
       e.preventDefault();
       console.log('add func', this.state)
@@ -34,6 +35,7 @@ class List extends Component {
       let toPackLocal = this.state.toPack;
       toPackLocal.push(this.state.newItem)
       this.setState({error: '', newItem: '', toPack: toPackLocal});
+      //update database with user items
       axios.post('/saved/profile/list', {
         user: this.props.user,
         list: this.state.toPack
@@ -58,7 +60,7 @@ class List extends Component {
     return(
       <div className="PackingList container">
         <h2 className="packing-list-title">Packing List</h2>
-        <packingList items={this.state.toPack} onDelete={this.deleteItem}/>
+        <PackingList items={this.state.toPack} onDelete={this.deleteItem} />
         <form onSubmit={this.add}>
           <input type='text' className='form-control' placeholder='add something to pack' onChange={this.newItemChange} value={this.state.newItem} />
         </form>
@@ -70,20 +72,20 @@ class List extends Component {
   }
 }
 
-class packingList extends Component{
+class PackingList extends Component{
   render(){
     const packingItems = this.props.items.map(thing =>{
-      return (<ItemList key={thing} item={thing} onDelete={this.props.onDelete} />);
+      return (<ListItem key={thing} item={thing} onDelete={this.props.onDelete} />);
     });
     return (
       <ul className='list-group'>
-        {packingList}
+        {packingItems}
       </ul>
     );
   }
 }
 
-class ItemList extends Component{
+class ListItem extends Component{
   deleteHandler= () =>{
     console.log('delete handler');
     console.log(this.props.item);

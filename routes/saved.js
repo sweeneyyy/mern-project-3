@@ -73,15 +73,16 @@ router.get('/profile/:id', function(req, res, callback){
 router.post('/profile/list', function(req, res, callback){
   console.log('list post route', req.body);
   var userId = req.body.user.id;
+  var items = req.body.list;
   User.findById(userId)
     .exec(function(err, foundUser){
       console.log("my current user", foundUser);
       if(err){
         res.status(500).json({error: err.message});
-      } else {
-        foundUser.list.push({
-          "list": req.body.toPack
-        });
+      } else { //TODO check for duplicates!
+        items.forEach(function(item){
+          foundUser.list.push(item)
+        })
         console.log('Found user after list push', foundUser);
         foundUser.save(function(err){
           if(err){

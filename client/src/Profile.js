@@ -4,6 +4,8 @@ import RestaurantsSaved from './planning/RestaurantsSaved.js';
 import EventsSaved from './planning/EventsSaved.js';
 import axios from 'axios';
 
+
+
 class Profile extends Component {
   constructor(props){
     super(props);
@@ -15,24 +17,33 @@ class Profile extends Component {
 
   componentWillMount() {
     axios.get('/saved/profile/' + this.props.user.id).then((res) => {
-      console.log(res);
-      console.log(this.props.user.restaurant);
-      this.setState({ user: res.data })
-    })
+      // console.log(res);
+      // console.log(this.props.user.restaurant);
+      this.setState({ 
+        restaurants: res.data, 
+        user: this.props.user 
+      });
+    });
   }
 
+
   render(){
-    var saved; //set state or map saved to display?
-    var restaurants = this.state.restaurants;
-    console.log("restaurants", restaurants);
+    var display;
+    var savedBusiness = this.state.restaurants;
+    if(savedBusiness.length < 1){
+      display = <p>Go save some restaurants!</p>
+    }else {
+      display = savedBusiness.map((business) => {
+        return(<RestaurantsSaved business={business} />);
+      });
+    } 
 
     if(this.props.user && this.props.user.name){
-      console.log(this.state.user);
+      // console.log(this.state.user);
       return (<div>
           <h4>Hello, {this.props.user.name}!</h4>
           <p>Saved restaurants:</p>
-          <p>{this.props.user.restaurant[1].name}</p>
-          <img src={this.props.user.restaurant[1].imgurl} alt={""}/>
+          {display}
           <List />
         </div>);
     }

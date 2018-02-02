@@ -73,13 +73,4 @@ router.get('/profile/:id', function(req, res, callback){
 
 
 
-
-// app.get('/', function (req, res) {
-//   User.findAll().populate('name')
-//     .exec(function(err, name) {
-//       if (err) { return console.log("index error: " + err); }
-//       res.json(name);
-//   });
-// });
-
 module.exports = router;

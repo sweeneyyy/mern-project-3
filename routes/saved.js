@@ -59,5 +59,12 @@ router.post('/results/restaurantsaved', function(req, res, callback){
 
 //POST - save restaurant or event to db
 
+// app.get('/', function (req, res) {
+//   User.findAll().populate('name')
+//     .exec(function(err, name) {
+//       if (err) { return console.log("index error: " + err); }
+//       res.json(name);
+//   });
+// });
 
 module.exports = router;

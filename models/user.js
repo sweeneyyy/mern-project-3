@@ -41,7 +41,7 @@ var userSchema = new mongoose.Schema({
     }
   ],
   list: [String]
-});
+}, {usePushEach: true}); // Must have this in order to use push with this version of mongo
 // Override 'toJSON' to prevent the password from being returned with the user
 userSchema.set('toJSON', {
   transform: function(doc, ret, options) {

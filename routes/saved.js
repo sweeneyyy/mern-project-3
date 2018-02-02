@@ -27,13 +27,17 @@ router.post('/results', function(req, res, callback){
   });
 });
 
-
-router.post('/results', function(req, res, callback){
+// POST - save restaurant to db for user profile
+router.post('/results/restaurantsaved', function(req, res, callback){
   console.log('backend', req.body)
   var userId = req.body.user.id;
   User.findById(userId)
     .exec(function(err, foundUser){
+<<<<<<< HEAD
       console.log("my current user", foundUser);
+=======
+      console.log('foundUser', foundUser);
+>>>>>>> 0c2a7d8af6e31fc2f5d45d66eb34d1c8c6c34824
       if(err){
         res.status(500).json({error: err.message});
       }else{
@@ -44,11 +48,18 @@ router.post('/results', function(req, res, callback){
           "rating": req.body.business.rating,
           "category": req.body.business
         });
-        foundUser.save();
-        res.status(201).json(foundUser);
+        console.log('#### Found User After PUsh', foundUser);//this console log works
+        foundUser.save(function(err){
+          if(err){
+            console.log(err);
+            return;
+          }
+          // res.json(foundUser);
+        });//this line isnt working
+        res.json(foundUser);
       }
-    })
   })
+})
 
 //POST - save restaurant or event to db
 

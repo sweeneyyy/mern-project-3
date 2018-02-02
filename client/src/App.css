@@ -136,3 +136,8 @@ nav a:hover {
   font-size: 90px;
   padding-bottom: 10px;
 }
+/*restaurant results*/
+.restaurant-results img{
+  max-height: 300px;
+  max-width: 300px;
+}

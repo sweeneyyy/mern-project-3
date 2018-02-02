@@ -44,7 +44,7 @@ class Profile extends Component {
           <h4>Hello, {this.props.user.name}!</h4>
           <p>Saved restaurants:</p>
           {display}
-          <List />
+          <List user={this.props.user} />
         </div>);
     }
     else {

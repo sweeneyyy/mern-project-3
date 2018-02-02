@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 
 class List extends Component {
   constructor(props){
@@ -11,35 +12,48 @@ class List extends Component {
   }
 
   clear = () => {
-    this.setState({ pack: [] });
+    this.setState({ toPack: [] });
   }
+
   deleteItem =(item) => {
-  console.log('parent Component delete fucntion');
-  console.log(item);
-  let toPackLocal = this.state.toPack;
-  //idexOf returns in to array. you can then slice
-  let itemIndex = toPackLocal.indexOf(item);
-  if(itemIndex >= 0){
-    toPackLocal.splice(itemIndex, 1);
-    this.setState({ toPack:toPackLocal });
-  }
-}
-add = (e) => {
-    e.preventDefault();
-    console.log('add func', this.state)
-    if(this.state.newItem){
+    console.log('parent Component delete fucntion');
+    console.log(item);
     let toPackLocal = this.state.toPack;
-    toPackLocal.push(this.state.newItem)
-    this.setState({error: '', newItem: '', toPack: toPackLocal});
+    //idexOf returns in to array. you can then slice
+    let itemIndex = toPackLocal.indexOf(item);
+    if(itemIndex >= 0){
+      toPackLocal.splice(itemIndex, 1);
+      this.setState({ toPack:toPackLocal });
+    }
   }
-  else{
-    this.setState({error: 'Please enter something to pack'})
+
+  add = (e) => {
+      e.preventDefault();
+      console.log('add func', this.state)
+      if(this.state.newItem){
+      let toPackLocal = this.state.toPack;
+      toPackLocal.push(this.state.newItem)
+      this.setState({error: '', newItem: '', toPack: toPackLocal});
+      axios.post('/saved/profile/list', {
+        user: this.props.user,
+        list: this.state.toPack
+      }).then((res) => {
+        console.log("list data", res.data)
+      }).catch((err) => {
+        console.log("err", err);
+      })
+    }
+
+    else{
+      this.setState({error: 'Please enter something to pack'})
+    }
   }
-}
-newItemChange = (e) => {
-  this.setState({ newItem: e.target.value });
-  console.log('change', this.state.newItem)
-}
+
+  newItemChange = (e) => {
+    this.setState({ newItem: e.target.value });
+    console.log('change', this.state.newItem)
+  }
+
   render() {
     return(
       <div className="PackingList container">
@@ -68,12 +82,14 @@ class packingList extends Component{
     );
   }
 }
+
 class ItemList extends Component{
   deleteHandler= () =>{
     console.log('delete handler');
     console.log(this.props.item);
     this.props.onDelete(this.props.item);
   }
+
   render(){
     return(
       <li className='packing-list-item'>

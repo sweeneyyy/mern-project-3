@@ -68,7 +68,6 @@ class Results extends Component {
     }
     return(
       <div className="container Results">
-        <h3>Results Page</h3>
         {results}
         <Search query={this.state.query} handleInputChange={(event) => this.handleInputChange(event)} preventing={this.preventing} onSubmit={this.handleSubmit} />
         <RestaurantResults businesses={this.state.businesses} saveClick={this.saveClick} />

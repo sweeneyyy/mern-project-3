@@ -22,19 +22,18 @@ class Profile extends Component {
   }
 
   render(){
-    var saved;
+    var saved; //set state or map saved to display?
     var restaurants = this.state.restaurants;
     console.log("restaurants", restaurants);
 
     if(this.props.user && this.props.user.name){
       console.log(this.state.user);
       return (<div>
-          <h2>HELLO AGAIN {this.props.user.name}!</h2>
+          <h4>Hello, {this.props.user.name}!</h4>
           <p>Saved restaurants:</p>
           <p>{this.props.user.restaurant[1].name}</p>
           <img src={this.props.user.restaurant[1].imgurl} alt={""}/>
           <List />
-          <EventsSaved />
         </div>);
     }
     else {

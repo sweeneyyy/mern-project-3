@@ -10,14 +10,14 @@ class EventResults extends Component {
   const Events = () => {
   	return (
     <div>
-          events
+         
     </div>
     )
   }
 
     return(
       <div className="EventResults">
-        <h3>Events:</h3>
+        <h3></h3>
         <ul className="result-list">
         	<Events />
         </ul>

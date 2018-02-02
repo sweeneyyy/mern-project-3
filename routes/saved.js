@@ -33,7 +33,7 @@ router.post('/results', function(req, res, callback){
   var userId = req.body.user.id;
   User.findById(userId)
     .exec(function(err, foundUser){
-      console.log(foundUser);
+      console.log("my current user", foundUser);
       if(err){
         res.status(500).json({error: err.message});
       }else{

@@ -6,7 +6,7 @@ class List extends Component {
     super(props)
     this.state = {
       error: '',
-      toPack: ["socks","shoes","food"],
+      toPack: [],
       newItem: ''
     }
   }
@@ -26,6 +26,15 @@ class List extends Component {
       toPackLocal.splice(itemIndex, 1);
       this.setState({ toPack:  toPackLocal });
     }
+
+    axios.delete('/saved/profile/list', {
+      user: this.props.user,
+      item: item
+    }).then((res) => {
+      console.log("list item to remove", res.data)
+    }).catch((err) => {
+      console.log("err", err);
+    })
   }
   //Add new item to the list
   add = (e) => {
@@ -56,7 +65,18 @@ class List extends Component {
     console.log('change', this.state.newItem)
   }
 
+  componentWillMount() {
+    axios.get('/saved/profile/' + this.props.user.id).then((res) => {
+      console.log('list willMount',res);
+      // console.log(this.props.user.restaurant);
+      this.setState({
+        toPack: res.data.list
+      });
+    });
+  }
+
   render() {
+    console.log('list state', this.state);
     return(
       <div className="PackingList container">
         <h2 className="packing-list-title">Packing List</h2>

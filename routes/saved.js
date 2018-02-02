@@ -65,7 +65,7 @@ router.get('/profile/:id', function(req, res, callback){
   .exec(function(err, user){
     if(err) {return console.log('error', err); }
     // console.log("user", user);
-    res.send(user.restaurant);
+    res.send(user);
   });
 });
 
@@ -95,7 +95,24 @@ router.post('/profile/list', function(req, res, callback){
   });
 });
 
-
+// DELETE packing list item from user db
+router.delete('/profile/list', function(req, res, callback){
+  console.log('list delete route reached', req.body);
+  var userId = req.body.user.id;
+  var item = req.body.item;
+  User.findById(userId)
+    .exec(function(err, foundUser){
+      if(err) {return console.log('error', err); }
+      console.log("my current user", foundUser);
+      User.update({
+        $pull: {
+          'user.list': { item }
+        }
+      })
+      res.json(foundUser);
+    })
+   
+})
 
 
 

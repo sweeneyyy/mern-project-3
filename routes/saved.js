@@ -33,11 +33,7 @@ router.post('/results/restaurantsaved', function(req, res, callback){
   var userId = req.body.user.id;
   User.findById(userId)
     .exec(function(err, foundUser){
-<<<<<<< HEAD
       console.log("my current user", foundUser);
-=======
-      console.log('foundUser', foundUser);
->>>>>>> 0c2a7d8af6e31fc2f5d45d66eb34d1c8c6c34824
       if(err){
         res.status(500).json({error: err.message});
       }else{

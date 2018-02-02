@@ -8,24 +8,31 @@ class Profile extends Component {
   constructor(props){
     super(props);
     this.state= {
-      restaurants: {}
+      user: {},
+      restaurants: []
     }
   }
 
   componentWillMount() {
     axios.get('/saved/profile/' + this.props.user.id).then((res) => {
       console.log(res);
-      this.setState({restaurants: res.data})
-
+      console.log(this.props.user.restaurant);
+      this.setState({ user: res.data })
     })
   }
 
   render(){
+    var saved;
+    var restaurants = this.state.restaurants;
+    console.log("restaurants", restaurants);
+
     if(this.props.user && this.props.user.name){
-      console.log(this.state.restaurants);
+      console.log(this.state.user);
       return (<div>
           <h2>HELLO AGAIN {this.props.user.name}!</h2>
-          <p>{this.state.restaurants.name}</p>
+          <p>Saved restaurants:</p>
+          <p>{this.props.user.restaurant[1].name}</p>
+          <img src={this.props.user.restaurant[1].imgurl} alt={""}/>
           <List />
           <EventsSaved />
         </div>);

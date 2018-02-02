@@ -56,7 +56,7 @@ class Results extends Component {
 
   render() {
     var results;
-    var res=this.state.businesses
+    var res = this.state.businesses;
     
     if(this.state.businesses){
       results = res.map((b)=>{

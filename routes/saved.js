@@ -63,8 +63,8 @@ router.get('/profile/:id', function(req, res, callback){
   User.findById(req.params.id)
   .exec(function(err, user){
     if(err) {return console.log('error', err); }
-    console.log(user);
-    res.send(user);
+    console.log("user", user);
+    res.send(user.restaurant);
   });
 });
 

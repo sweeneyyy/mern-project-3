@@ -25,11 +25,16 @@ class List extends Component {
     if(itemIndex >= 0){
       toPackLocal.splice(itemIndex, 1);
       this.setState({ toPack:  toPackLocal });
+      console.log('toPackLocal', toPackLocal);
     }
+    // console.log("toPack", this.state.toPack)
+    // console.log("toPackLocal", toPackLocal)
+    // console.log("item...", this.state.toPack[0])
 
     axios.delete('/saved/profile/list', {
       data: {
         user: this.props.user,
+        list: this.state.toPack,
         item: item
       }
     }).then((res) => {

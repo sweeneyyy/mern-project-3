@@ -100,19 +100,20 @@ router.delete('/profile/list', function(req, res, next){
   console.log('######list delete route reached', req.body);
   var userId = req.body.user.id;
   var items = req.body.user.list;
+  console.log("req.body.user.list", items)
   // console.log("######GRAH!",userId)///this is what we want
-  User.findById(req.body.user.id, function(err, user){
-    console.log('user to delete list item from', user, " ", req.body.item)
+  User.findById(userId, function(err, user){
+    console.log('user to delete list item from', user, " req.body.item", req.body.item)
     let newList = [];
-    for(let i = 0; i < req.body.user.list.length; i++) {
-      if(req.body.item != req.body.user.list[i]) {
-        newList.push(req.body.user.list[i]);
+    for(var i = 0; i < items.length; i++) {
+      if(req.body.item != items[i]) {
+        newList.push(items[i]);
       }
     }
 
     user.items = newList;
-    User.update({_id: user._id}, {$set: {
-      "items": newList
+    User.update({_id: userId}, { $set: {
+      "list": newList
     }}, function (err, user) {
       if(err) console.log("error", err);
       console.log('item removed', newList);

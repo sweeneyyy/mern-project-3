@@ -17,7 +17,7 @@ class List extends Component {
   //Delete a single item from the list
   deleteItem = (item) => {
     console.log('parent Component delete function');
-    console.log(item);
+    // console.log(item);
     // the items in the packing list
     let toPackLocal = this.state.toPack;
     //indexOf returns in to array. you can then slice
@@ -26,10 +26,14 @@ class List extends Component {
       toPackLocal.splice(itemIndex, 1);
       this.setState({ toPack:  toPackLocal });
     }
+    // console.log("user", this.props.user)
+    console.log("item", item);
 
     axios.delete('/saved/profile/list', {
-      user: this.props.user,
-      item: item
+      data: {
+        user: this.props.user,
+        item: this.props.item
+      }
     }).then((res) => {
       console.log("list item to remove", res.data)
     }).catch((err) => {
@@ -39,7 +43,7 @@ class List extends Component {
   //Add new item to the list
   add = (e) => {
       e.preventDefault();
-      console.log('add func', this.state)
+      // console.log('add func', this.state)
       if(this.state.newItem){
       let toPackLocal = this.state.toPack;
       toPackLocal.push(this.state.newItem)
@@ -49,7 +53,7 @@ class List extends Component {
         user: this.props.user,
         list: this.state.toPack
       }).then((res) => {
-        console.log("list data", res.data)
+        // console.log("list data", res.data)
       }).catch((err) => {
         console.log("err", err);
       })
@@ -62,12 +66,12 @@ class List extends Component {
 
   newItemChange = (e) => {
     this.setState({ newItem: e.target.value });
-    console.log('change', this.state.newItem)
+    // console.log('change', this.state.newItem)
   }
 
   componentWillMount() {
     axios.get('/saved/profile/' + this.props.user.id).then((res) => {
-      console.log('list willMount',res);
+      // console.log('list willMount',res);
       // console.log(this.props.user.restaurant);
       this.setState({
         toPack: res.data.list
@@ -76,7 +80,7 @@ class List extends Component {
   }
 
   render() {
-    console.log('list state', this.state);
+    // console.log('list state', this.state);
     return(
       <div className="PackingList container">
         <h2 className="packing-list-title">Packing List</h2>
@@ -107,8 +111,8 @@ class PackingList extends Component{
 
 class ListItem extends Component{
   deleteHandler= () =>{
-    console.log('delete handler');
-    console.log(this.props.item);
+    // console.log('delete handler');
+    console.log("this.props.item", this.props.item);
     this.props.onDelete(this.props.item);
   }
 

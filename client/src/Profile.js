@@ -18,7 +18,7 @@ class Profile extends Component {
 
   componentWillMount() {
     axios.get('/saved/profile/' + this.props.user.id).then((res) => {
-      console.log('willMount',res);
+      // console.log('willMount',res);
       // console.log(this.props.user.restaurant);
       this.setState({ 
         restaurants: res.data.restaurant, 
@@ -31,7 +31,7 @@ class Profile extends Component {
   render(){
     var display;
     var savedBusiness = this.state.restaurants;
-    console.log(this.state);
+    // console.log(this.state);
     if(savedBusiness.length < 1){
       display = <p>Go save some restaurants!</p>
     }else {

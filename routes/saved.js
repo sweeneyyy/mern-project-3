@@ -5,7 +5,7 @@ var mongoose = require('mongoose');
 var User = require('../models/user');
 var bcrypt = require('bcrypt');
 var jwt = require('jsonwebtoken');
-
+// Yelp fusion setup
 const yelp = require('yelp-fusion');
 const apikey = process.env.API_KEY;
 const client = yelp.client(apikey);
@@ -97,23 +97,23 @@ router.post('/profile/list', function(req, res, callback){
 
 // DELETE packing list item from user db
 router.delete('/profile/list', function(req, res, callback){
-  console.log('list delete route reached', req.body);
+  // console.log('######list delete route reached', req.body);
   var userId = req.body.user.id;
   var item = req.body.item;
+  // console.log("######GRAH!",userId)///this is what we want
+  console.log("backend item to delete", req.body.item)
   User.findById(userId)
     .exec(function(err, foundUser){
       if(err) {return console.log('error', err); }
       console.log("my current user", foundUser);
-      User.update({
-        $pull: {
-          'user.list': { item }
-        }
-      })
+      User.remove({ list: item }, function(err) {
+        if (err) console.log(err);
+        console.log('Item deleted!');
+      });
       res.json(foundUser);
-    })
+    });
    
-})
-
+});
 
 
 module.exports = router;

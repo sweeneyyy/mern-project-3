@@ -110,6 +110,9 @@ router.delete('/profile/list', function(req, res, next){
         newList.push(items[i]);
       }
     }
+    console.log("body item", req.body.item)
+    console.log("newList", newList);
+
 
     user.items = newList;
     User.update({_id: userId}, { $set: {

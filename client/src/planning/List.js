@@ -14,10 +14,9 @@ class List extends Component {
   clear = () => {
     this.setState({ toPack: [] });
   }
+
   //Delete a single item from the list
-  deleteItem = (item) => {
-    console.log('parent Component delete function');
-    // console.log(item);
+  deleteItem = (item) => {    
     // the items in the packing list
     let toPackLocal = this.state.toPack;
     //indexOf returns in to array. you can then slice
@@ -27,9 +26,6 @@ class List extends Component {
       this.setState({ toPack:  toPackLocal });
       console.log('toPackLocal', toPackLocal);
     }
-    // console.log("toPack", this.state.toPack)
-    // console.log("toPackLocal", toPackLocal)
-    // console.log("item...", this.state.toPack[0])
 
     axios.delete('/saved/profile/list', {
       data: {
@@ -55,6 +51,7 @@ class List extends Component {
       axios.post('/saved/profile/list', {
         user: this.props.user,
         list: this.state.toPack
+
       }).then((res) => {
         // console.log("list data", res.data)
       }).catch((err) => {
@@ -69,16 +66,14 @@ class List extends Component {
 
   newItemChange = (e) => {
     this.setState({ newItem: e.target.value });
-    // console.log('change', this.state.newItem)
   }
 
   componentWillMount() {
     axios.get('/saved/profile/' + this.props.user.id).then((res) => {
-      // console.log('list willMount',res);
-      // console.log(this.props.user.restaurant);
       this.setState({
         toPack: res.data.list
       });
+      // console.log("compWillMount", res.data.list);
     });
   }
 
@@ -87,12 +82,11 @@ class List extends Component {
       <div className="PackingList container">
         <h2 className="packing-list-title">Packing List</h2>
         <PackingList items={this.state.toPack} onDelete={this.deleteItem} />
-        <form onSubmit={this.add}>
+        <form>
           <input type='text' className='form-control' placeholder='add something to pack' onChange={this.newItemChange} value={this.state.newItem} />
-        </form>
-        <div className='text-left'>
           <button className='' onClick={this.add}>Add</button>
-        </div>
+        </form>
+    
       </div>
     );
   }

@@ -11,16 +11,17 @@ class Profile extends Component {
     super(props);
     this.state= {
       user: {},
-      restaurants: []
+      restaurants: [],
+      list: []
     }
   }
 
   componentWillMount() {
     axios.get('/saved/profile/' + this.props.user.id).then((res) => {
-      // console.log(res);
+      // console.log('willMount',res);
       // console.log(this.props.user.restaurant);
       this.setState({
-        restaurants: res.data,
+        restaurants: res.data.restaurant,
         user: this.props.user
       });
     });
@@ -30,6 +31,7 @@ class Profile extends Component {
   render(){
     var display;
     var savedBusiness = this.state.restaurants;
+    // console.log(this.state);
     if(savedBusiness.length < 1){
       display = <p>Go save some restaurants!</p>
     }else {
@@ -42,11 +44,10 @@ class Profile extends Component {
       // console.log(this.state.user);
       return (<div>
           <h4>Hello, {this.props.user.name}!</h4>
-          <div>
-            <p>Saved restaurants:</p>
-            {display}
-            <List />
-          </div>
+          <p>Saved restaurants:</p>
+          {display}
+        {/*{displayList}*/}
+          <List user={this.props.user} />
         </div>);
     }
     else {

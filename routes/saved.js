@@ -5,7 +5,7 @@ var mongoose = require('mongoose');
 var User = require('../models/user');
 var bcrypt = require('bcrypt');
 var jwt = require('jsonwebtoken');
-
+// Yelp fusion setup
 const yelp = require('yelp-fusion');
 const apikey = process.env.API_KEY;
 const client = yelp.client(apikey);
@@ -54,23 +54,74 @@ router.post('/results/restaurantsaved', function(req, res, callback){
         });//this line isnt working
         res.json(foundUser);
       }
-  })
-})
+  });
+});
 
+// GET user profile with saved restaurants
 router.get('/profile/:id', function(req, res, callback){
-  console.log('get route reached for saved rests');
+  // console.log('get route reached for saved rests');
   // res.json({});
   User.findById(req.params.id)
   .exec(function(err, user){
     if(err) {return console.log('error', err); }
-    console.log("user", user);
-    res.send(user.restaurant);
+    // console.log("user", user);
+    res.send(user);
   });
 });
 
+// POST packing list item to user db
+router.post('/profile/list', function(req, res, callback){
+  console.log('list post route', req.body);
+  var userId = req.body.user.id;
+  var items = req.body.list;
+  User.findById(userId)
+    .exec(function(err, foundUser){
+      console.log("my current user", foundUser);
+      if(err){
+        res.status(500).json({error: err.message});
+      } else { //TODO check for duplicates!
+        items.forEach(function(item){
+          foundUser.list.push(item)
+        })
+        console.log('Found user after list push', foundUser);
+        foundUser.save(function(err){
+          if(err){
+            console.log(err);
+            return;
+          }
+        });
+        res.json(foundUser);
+      }
+  });
+});
 
+// DELETE packing list item from user db
+router.delete('/profile/list', function(req, res, next){
+  console.log('######list delete route reached', req.body);
+  var userId = req.body.user.id;
+  var items = req.body.user.list;
+  // console.log("######GRAH!",userId)///this is what we want
+  User.findById(req.body.user.id, function(err, user){
+    console.log('user to delete list item from', user, " ", req.body.item)
+    let newList = [];
+    for(let i = 0; i < req.body.user.list.length; i++) {
+      if(req.body.item != req.body.user.list[i]) {
+        newList.push(req.body.user.list[i]);
+      }
+    }
 
-
+    user.items = newList;
+    User.update({_id: user._id}, {$set: {
+      "items": newList
+    }}, function (err, user) {
+      if(err) console.log("error", err);
+      console.log('item removed', newList);
+      res.json(user);
+    });
+  });
+   
+   
+});
 
 
 module.exports = router;

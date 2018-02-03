@@ -43,7 +43,7 @@ class Results extends Component {
     }
     console.log('businessToSave', businessToSave);
     console.log('user', this.props.user);
-
+    //find user saved items to display on profile page
     axios.post('/saved/results/restaurantsaved', {
       business: businessToSave,
       user: this.props.user,

@@ -42,7 +42,7 @@ class Profile extends Component {
 
     if(this.props.user && this.props.user.name){
       // console.log(this.state.user);
-      return (<div>
+      return (<div className="container saved-business">
           <h4>Hello, {this.props.user.name}!</h4>
           <p>Saved restaurants:</p>
           {display}

@@ -22,7 +22,7 @@ class Nav extends Component {
 
     return(
         <div class="navbar-fixed">
-          <nav class="transparent z-depth-0">
+          <nav class="transparent">
             <div class="nav-wrapper">
               <div class="row">
                 <div class="col s12">

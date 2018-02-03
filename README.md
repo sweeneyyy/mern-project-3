@@ -24,6 +24,8 @@ POST | /auth/me/from/token | Checks if token is present on browser refresh
 ![alt text](https://i.imgur.com/VM5v76jl.png)
 ![alt text](https://i.imgur.com/HA1nE8Sl.png)
 ![alt text](https://i.imgur.com/zLla9Tal.png)
+#### Progression:
+![alt text](https://i.imgur.com/IJcKOdZ.png)
 
 ## Resources Used
 * Yelp API

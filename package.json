@@ -1,5 +1,5 @@
 {
-  "name": "meanimageeditor",
+  "name": "meanImageEditor",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -20,18 +20,5 @@
     "react-router-dom": "^4.2.2",
     "serve-favicon": "~2.4.5",
     "yelp-fusion": "^2.0.3"
-  },
-  "description": "A full-stack MERN app created by Winston Summers, Tony Phan and Sweeney Arnett!",
-  "main": "app.js",
-  "devDependencies": {},
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/rallysport206/mern-project-3.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/rallysport206/mern-project-3/issues"
-  },
-  "homepage": "https://github.com/rallysport206/mern-project-3#readme"
+  }
 }

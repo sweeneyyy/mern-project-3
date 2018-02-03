@@ -19,9 +19,9 @@ class Profile extends Component {
     axios.get('/saved/profile/' + this.props.user.id).then((res) => {
       // console.log(res);
       // console.log(this.props.user.restaurant);
-      this.setState({ 
-        restaurants: res.data, 
-        user: this.props.user 
+      this.setState({
+        restaurants: res.data,
+        user: this.props.user
       });
     });
   }
@@ -36,15 +36,17 @@ class Profile extends Component {
       display = savedBusiness.map((business) => {
         return(<RestaurantsSaved business={business} />);
       });
-    } 
+    }
 
     if(this.props.user && this.props.user.name){
       // console.log(this.state.user);
       return (<div>
           <h4>Hello, {this.props.user.name}!</h4>
-          <p>Saved restaurants:</p>
-          {display}
-          <List />
+          <div>
+            <p>Saved restaurants:</p>
+            {display}
+            <List />
+          </div>
         </div>);
     }
     else {
@@ -52,5 +54,13 @@ class Profile extends Component {
     }
   }
 }
+
+<div className="profile-container-how">
+  <div className="container">
+    <div className="row">
+      <div className="how-it-works col s12 m4">{display}</div>
+    </div>
+  </div>
+</div>
 
 export default Profile;

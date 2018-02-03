@@ -145,13 +145,21 @@ header{
   padding-bottom: 10px;
 }
 
-/*.how{
+.how{
   font-size: 100px;
   text-align: center;
 
 }
 /*restaurant results*/
 .restaurant-results img{
+  max-height: 300px;
+  max-width: 300px;
+}
+/*saved restaurants*/
+.restaurant-saved{
+ text-align: center;
+}
+.saved-img{
   max-height: 300px;
   max-width: 300px;
 }

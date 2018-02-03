@@ -56,12 +56,4 @@ class Profile extends Component {
   }
 }
 
-<div className="profile-container-how">
-  <div className="container">
-    <div className="row">
-      <div className="how-it-works col s12 m4">{display}</div>
-    </div>
-  </div>
-</div>
-
 export default Profile;

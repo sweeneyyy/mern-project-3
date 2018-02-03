@@ -29,7 +29,7 @@ class Results extends Component {
       console.log("error:", err);
     })
   }
-  
+
 
   saveClick = (e) => {
     e.preventDefault();
@@ -57,10 +57,14 @@ class Results extends Component {
   render() {
     var results;
     var res = this.state.businesses;
-    
+
     if(this.state.businesses){
       results = res.map((b)=>{
-        <li>b</li>
+        <div className="container Results">
+          <div className="row">
+            <div className="col s12 m6 l3"><li>b</li></div>
+          </div>
+        </div>
       });
     }else{
       results = <p>none</p>
@@ -68,10 +72,12 @@ class Results extends Component {
     }
     return(
       <div className="container Results">
-        {results}
-        <Search query={this.state.query} handleInputChange={(event) => this.handleInputChange(event)} preventing={this.preventing} onSubmit={this.handleSubmit} />
-        <RestaurantResults businesses={this.state.businesses} saveClick={this.saveClick} />
-        <EventResults />
+        <div className="row">
+          <div className="col s12 m6 l3">{results}</div>
+          <Search query={this.state.query} handleInputChange={(event) => this.handleInputChange(event)} preventing={this.preventing} onSubmit={this.handleSubmit} />
+          <RestaurantResults businesses={this.state.businesses} saveClick={this.saveClick} />
+          <EventResults />
+        </div>
       </div>
     )
   }

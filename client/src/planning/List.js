@@ -26,16 +26,14 @@ class List extends Component {
       toPackLocal.splice(itemIndex, 1);
       this.setState({ toPack:  toPackLocal });
     }
-    // console.log("user", this.props.user)
-    console.log("item", item);
 
     axios.delete('/saved/profile/list', {
       data: {
         user: this.props.user,
-        item: this.props.item
+        item: item
       }
     }).then((res) => {
-      console.log("list item to remove", res.data)
+      console.log("removed item from list", item)
     }).catch((err) => {
       console.log("err", err);
     })
@@ -80,7 +78,6 @@ class List extends Component {
   }
 
   render() {
-    // console.log('list state', this.state);
     return(
       <div className="PackingList container">
         <h2 className="packing-list-title">Packing List</h2>
@@ -110,7 +107,7 @@ class PackingList extends Component{
 }
 
 class ListItem extends Component{
-  deleteHandler= () =>{
+  deleteHandler= () => {
     // console.log('delete handler');
     console.log("this.props.item", this.props.item);
     this.props.onDelete(this.props.item);

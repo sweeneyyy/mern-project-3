@@ -96,22 +96,30 @@ router.post('/profile/list', function(req, res, callback){
 });
 
 // DELETE packing list item from user db
-router.delete('/profile/list', function(req, res, callback){
-  // console.log('######list delete route reached', req.body);
+router.delete('/profile/list', function(req, res, next){
+  console.log('######list delete route reached', req.body);
   var userId = req.body.user.id;
-  var item = req.body.item;
+  var items = req.body.user.list;
   // console.log("######GRAH!",userId)///this is what we want
-  console.log("backend item to delete", req.body.item)
-  User.findById(userId)
-    .exec(function(err, foundUser){
-      if(err) {return console.log('error', err); }
-      console.log("my current user", foundUser);
-      User.remove({ list: item }, function(err) {
-        if (err) console.log(err);
-        console.log('Item deleted!');
-      });
-      res.json(foundUser);
+  User.findById(req.body.user.id, function(err, user){
+    console.log('user to delete list item from', user, " ", req.body.item)
+    let newList = [];
+    for(let i = 0; i < req.body.user.list.length; i++) {
+      if(req.body.item != req.body.user.list[i]) {
+        newList.push(req.body.user.list[i]);
+      }
+    }
+
+    user.items = newList;
+    User.update({_id: user._id}, {$set: {
+      "items": newList
+    }}, function (err, user) {
+      if(err) console.log("error", err);
+      console.log('item removed', newList);
+      res.json(user);
     });
+  });
+   
    
 });
 

@@ -23,7 +23,6 @@ class BusinessResults extends Component{
                       <div className="card-action">
                         <a href={this.props.business.url}><img className="yelp" src="https://i.imgur.com/cSLthnw.png" alt="yelp"/></a>
                         <input type="button" value="save" id={this.props.business.id} onClick={this.props.saveClick} />
-                        <hr />
                       </div>
                         </li>
                     </ul>

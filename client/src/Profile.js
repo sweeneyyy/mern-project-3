@@ -35,11 +35,18 @@ class Profile extends Component {
     }
 
     if(this.props.user && this.props.user.name){
-      return (<div className="container saved-business">
+      return (
+        <div className="row">
+          <div className="container saved-business">
           <h4>Hello, {this.props.user.name}!</h4>
-          <p>Saved restaurants:</p>
-          {display}
-          <List user={this.props.user} />
+          <div className="col s6">
+            <List user={this.props.user} />
+          </div>
+          <div className="col s6">
+            <p>Saved restaurants:</p>
+            {display}
+          </div>
+          </div>
         </div>);
     }
     else {

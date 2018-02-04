@@ -4,8 +4,6 @@ import RestaurantsSaved from './planning/RestaurantsSaved.js';
 import EventsSaved from './planning/EventsSaved.js';
 import axios from 'axios';
 
-
-
 class Profile extends Component {
   constructor(props){
     super(props);
@@ -26,7 +24,6 @@ class Profile extends Component {
       });
     });
   }
-
 
   render(){
     var display;

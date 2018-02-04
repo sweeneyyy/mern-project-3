@@ -18,8 +18,8 @@ class Profile extends Component {
     axios.get('/saved/profile/' + this.props.user.id).then((res) => {
       // console.log('willMount',res);
       // console.log(this.props.user.restaurant);
-      this.setState({ 
-        restaurants: res.data.restaurant, 
+      this.setState({
+        restaurants: res.data.restaurant,
         user: this.props.user
       });
     });
@@ -35,11 +35,11 @@ class Profile extends Component {
       display = savedBusiness.map((business) => {
         return(<RestaurantsSaved business={business} />);
       });
-    } 
+    }
 
     if(this.props.user && this.props.user.name){
       // console.log(this.state.user);
-      return (<div>
+      return (<div className="container saved-business">
           <h4>Hello, {this.props.user.name}!</h4>
           <p>Saved restaurants:</p>
           {display}

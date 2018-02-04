@@ -15,7 +15,7 @@ router.post('/results', function(req, res, callback){
   console.log("req.body is", req.body);
   const searchRequest = {
     location: req.body.location, //search location from front end
-    limit: 10
+    limit: 12
   }
   client.search(searchRequest).then(response => {
     const result = response.jsonBody;
@@ -107,8 +107,9 @@ router.delete('/profile/list/:userId', function(req, res, next){
       res.json(user);
     });
   });
-});
 
+
+});
 
 
 module.exports = router;

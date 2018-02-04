@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Search from './planning/Search.js';
 import HowItWorks from './planning/HowItWorks.js';
 import About from './planning/About.js';
 

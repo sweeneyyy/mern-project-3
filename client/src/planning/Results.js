@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Search from './Search.js';
 import RestaurantResults from './RestaurantResults.js';
-import EventResults from './EventResults.js';
+// import EventResults from './EventResults.js';
 import axios from 'axios';
 
 class Results extends Component {
@@ -59,7 +59,7 @@ class Results extends Component {
     var res = this.state.businesses;
 
     if(this.state.businesses){
-      results = res.map((b)=>{
+      results = res.map((b)=> {
         <div className="container Results">
           <div className="row">
             <div className="col s12 m6 l3"><li>b</li></div>
@@ -76,7 +76,6 @@ class Results extends Component {
           <div className="col s12 m6 l3">{results}</div>
           <Search query={this.state.query} handleInputChange={(event) => this.handleInputChange(event)} preventing={this.preventing} onSubmit={this.handleSubmit} />
           <RestaurantResults businesses={this.state.businesses} saveClick={this.saveClick} />
-          <EventResults />
         </div>
       </div>
     )

@@ -4,7 +4,7 @@ class BusinessResults extends Component{
   render(){
     return(
       <div className='row'>
-          <div className="card horizontal">
+          <div className="card small horizontal">
             <div className="card-image-business">
               <img src={this.props.business.image_url} alt={this.props.business.name} />
             </div>

@@ -118,6 +118,7 @@ header{
   padding: 20px;
   font-size: 20px;
   text-align: center;
+  padding: 100px, 0px, 100px, 0px;
 }
 
 .card-content {
@@ -139,10 +140,6 @@ header{
   /*padding: 10px;*/
   font-size: 20px;
   text-align: center;
-}
-
-.profile{
-  padding: 100px, 0px, 100px, 0px;
 }
 
 .App-title{
@@ -167,11 +164,7 @@ header{
 
 /*saved restaurants*/
 .restaurant-saved{
- text-align: center;
-}
-.saved-img{
-  max-height: 300px;
-  max-width: 300px;
+ /*text-align: center;*/
 }
 
 .saved-business{

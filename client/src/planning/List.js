@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
+//User list component with default state empty
 class List extends Component {
   constructor(props){
     super(props)
@@ -28,6 +29,7 @@ class List extends Component {
     }
 
     // Send user list to back end to update db
+    // back tick is es6 syntax that allows inline interpolation / eliminates concatenation
     axios.delete(`/saved/profile/list/${this.props.user.id}`, {
       data: { list: toPackLocal }
     }).then((res) => {
@@ -38,10 +40,9 @@ class List extends Component {
   }
 
 
-  //Add new item to the list
+  //Add new item to the users list
   add = (e) => {
       e.preventDefault();
-      // console.log('add func', this.state)
       if(this.state.newItem){
       let toPackLocal = this.state.toPack;
       toPackLocal.push(this.state.newItem)
@@ -51,7 +52,7 @@ class List extends Component {
       axios.post(`/saved/profile/list/${this.props.user.id}`, {
         list: this.state.toPack
       }).then((res) => {
-        // console.log("list data", res.data)
+        console.log("updated user list", res.data)
       }).catch((err) => {
         console.log("err", err);
       })
@@ -71,7 +72,6 @@ class List extends Component {
       this.setState({
         toPack: res.data.list
       });
-      // console.log("compWillMount", res.data.list);
     });
   }
 

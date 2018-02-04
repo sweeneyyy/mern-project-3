@@ -70,9 +70,9 @@ router.get('/profile/:id', function(req, res, callback){
 });
 
 // POST packing list item to user db
-router.post('/profile/list', function(req, res, callback){
+router.post('/profile/list/:userId', function(req, res, callback){
   console.log('list post route', req.body);
-  var userId = req.body.user.id;
+  var { userId } = req.params;
   var items = req.body.list;
   User.findById(userId)
     .exec(function(err, foundUser){
@@ -80,9 +80,7 @@ router.post('/profile/list', function(req, res, callback){
       if(err){
         res.status(500).json({error: err.message});
       } else { //TODO check for duplicates!
-        items.forEach(function(item){
-          foundUser.list.push(item)
-        })
+        foundUser.list = items && items.length ? items : [];
         console.log('Found user after list push', foundUser);
         foundUser.save(function(err){
           if(err){
@@ -95,37 +93,85 @@ router.post('/profile/list', function(req, res, callback){
   });
 });
 
+// router.post('/profile/list', function(req, res, callback){
+//   console.log('list post route', req.body);
+//   var userId = req.body.user.id;
+//   var items = req.body.list;
+//   User.findById(userId)
+//     .exec(function(err, foundUser){
+//       console.log("my current user", foundUser);
+//       if(err){
+//         res.status(500).json({error: err.message});
+//       } else { //TODO check for duplicates!
+//         items.forEach(function(item){
+//           foundUser.list.push(item)
+//         })
+//         console.log('Found user after list push', foundUser);
+//         foundUser.save(function(err){
+//           if(err){
+//             console.log(err);
+//             return;
+//           }
+//         });
+//         res.json(foundUser);
+//       }
+//   });
+// });
+
 // DELETE packing list item from user db
-router.delete('/profile/list', function(req, res, next){
+router.delete('/profile/list/:userId', function(req, res, next){
   console.log('######list delete route reached', req.body);
-  var userId = req.body.user.id;
-  var items = req.body.user.list;
-  console.log("req.body.user.list", items)
+  const { userId } = req.params;
   // console.log("######GRAH!",userId)///this is what we want
   User.findById(userId, function(err, user){
-    console.log('user to delete list item from', user, " req.body.item", req.body.item)
-    let newList = [];
-    for(var i = 0; i < items.length; i++) {
-      if(req.body.item != items[i]) {
-        newList.push(items[i]);
-      }
-    }
-    console.log("body item", req.body.item)
-    console.log("newList", newList);
-
-
-    user.items = newList;
+    console.log('user to delete list item from', user)
     User.update({_id: userId}, { $set: {
-      "list": newList
+      "list": req.body.list
     }}, function (err, user) {
-      if(err) console.log("error", err);
-      console.log('item removed', newList);
+      if (err) console.log("error", err);
       res.json(user);
     });
   });
-   
-   
 });
 
 
+// router.delete('/profile/list', function(req, res, next){
+//   console.log('######list delete route reached', req.body);
+//   var userId = req.body.user.id;
+//   var items = req.body.user.list;
+//   console.log("req.body.user.list", items)
+//   // console.log("######GRAH!",userId)///this is what we want
+//   User.findById(userId, function(err, user){
+//     console.log('user to delete list item from', user, " req.body.item", req.body.item)
+//     let newList = [];
+//     for(var i = 0; i < items.length; i++) {
+//       if(req.body.item != items[i]) {
+//         newList.push(items[i]);
+//       }
+//     }
+//     console.log("body item", req.body.item)
+//     console.log("newList", newList);
+
+
+//     user.items = newList;
+//     User.update({_id: userId}, { $set: {
+//       "list": newList
+//     }}, function (err, user) {
+//       if(err) console.log("error", err);
+//       console.log('item removed', newList);
+//       res.json(user);
+//     });
+//   });
+   
+   
+// });
+
+
 module.exports = router;
+
+
+
+
+
+
+

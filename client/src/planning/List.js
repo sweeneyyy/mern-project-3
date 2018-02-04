@@ -27,18 +27,17 @@ class List extends Component {
       console.log('toPackLocal', toPackLocal);
     }
 
-    axios.delete('/saved/profile/list', {
-      data: {
-        user: this.props.user,
-        list: this.state.toPack,
-        item: item
-      }
+    // Send user list to back end to update db
+    axios.delete(`/saved/profile/list/${this.props.user.id}`, {
+      data: { list: toPackLocal }
     }).then((res) => {
       console.log("removed item from list", item)
     }).catch((err) => {
       console.log("err", err);
     })
   }
+
+
   //Add new item to the list
   add = (e) => {
       e.preventDefault();
@@ -47,11 +46,10 @@ class List extends Component {
       let toPackLocal = this.state.toPack;
       toPackLocal.push(this.state.newItem)
       this.setState({error: '', newItem: '', toPack: toPackLocal});
-      //update database with user items
-      axios.post('/saved/profile/list', {
-        user: this.props.user,
-        list: this.state.toPack
 
+      //update database with user items
+      axios.post(`/saved/profile/list/${this.props.user.id}`, {
+        list: this.state.toPack
       }).then((res) => {
         // console.log("list data", res.data)
       }).catch((err) => {

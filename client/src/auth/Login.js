@@ -60,9 +60,11 @@ class Login extends Component {
               </form>);
     }
     return (
-      <div className="container">
-        {form}
-      </div>
+    <div className="login-form">
+        <div className="container">
+          {form}
+        </div>
+    </div>
     );
   }
 }

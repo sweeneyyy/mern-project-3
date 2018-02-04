@@ -12,7 +12,6 @@ const client = yelp.client(apikey);
 
 //Yelp API call to get restaurant results
 router.post('/results', function(req, res, callback){
-  console.log("req.body is", req.body);
   const searchRequest = {
     location: req.body.location, //search location from front end
     limit: 12
@@ -20,7 +19,7 @@ router.post('/results', function(req, res, callback){
   client.search(searchRequest).then(response => {
     const result = response.jsonBody;
     const prettyJson = JSON.stringify(result, null, 4);
-    console.log("this is prettyJson", prettyJson);
+    // console.log("this is prettyJson", prettyJson);
     res.send(prettyJson);
   }).catch((err) => {
     console.log("error:", err);
@@ -59,12 +58,9 @@ router.post('/results/restaurantsaved', function(req, res, callback){
 
 // GET user profile with saved restaurants
 router.get('/profile/:id', function(req, res, callback){
-  // console.log('get route reached for saved rests');
-  // res.json({});
   User.findById(req.params.id)
   .exec(function(err, user){
     if(err) {return console.log('error', err); }
-    // console.log("user", user);
     res.send(user);
   });
 });
@@ -95,9 +91,8 @@ router.post('/profile/list/:userId', function(req, res, callback){
 
 // DELETE packing list item from user db
 router.delete('/profile/list/:userId', function(req, res, next){
-  console.log('######list delete route reached', req.body);
+  // console.log('######list delete route reached', req.body);
   const { userId } = req.params;
-  // console.log("######GRAH!",userId)///this is what we want
   User.findById(userId, function(err, user){
     console.log('user to delete list item from', user)
     User.update({_id: userId}, { $set: {
@@ -107,8 +102,6 @@ router.delete('/profile/list/:userId', function(req, res, next){
       res.json(user);
     });
   });
-
-
 });
 
 

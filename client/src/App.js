@@ -11,7 +11,6 @@ import Profile from './Profile.js';
 import Signup from './auth/Signup.js';
 import About from './planning/About.js';
 import Results from './planning/Results.js';
-import Search from './planning/Search.js';
 
 class App extends Component {
   constructor(props){

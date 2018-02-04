@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
-//User list component with default state empty
+// User list component with default state empty
 class List extends Component {
   constructor(props){
     super(props)
@@ -11,16 +11,16 @@ class List extends Component {
       newItem: ''
     }
   }
-  //Clear entire packing list
+  // Clear entire packing list
   clear = () => {
     this.setState({ toPack: [] });
   }
 
-  //Delete a single item from the list
+  // Delete a single item from the list
   deleteItem = (item) => {    
     // the items in the packing list
     let toPackLocal = this.state.toPack;
-    //indexOf returns in to array. you can then slice
+    // indexOf returns in to array. you can then slice
     let itemIndex = toPackLocal.indexOf(item);
     if(itemIndex >= 0){
       toPackLocal.splice(itemIndex, 1);
@@ -40,7 +40,7 @@ class List extends Component {
   }
 
 
-  //Add new item to the users list
+  // Add new item to the users list
   add = (e) => {
       e.preventDefault();
       if(this.state.newItem){
@@ -48,7 +48,8 @@ class List extends Component {
       toPackLocal.push(this.state.newItem)
       this.setState({error: '', newItem: '', toPack: toPackLocal});
 
-      //update database with user items
+      // update database with user items
+      // back tick is es6 syntax that allows inline interpolation / eliminates concatenation
       axios.post(`/saved/profile/list/${this.props.user.id}`, {
         list: this.state.toPack
       }).then((res) => {
@@ -84,7 +85,6 @@ class List extends Component {
           <input type='text' className='form-control' placeholder='add something to pack' onChange={this.newItemChange} value={this.state.newItem} />
           <button className='' onClick={this.add}>Add</button>
         </form>
-    
       </div>
     );
   }
@@ -105,7 +105,6 @@ class PackingList extends Component{
 
 class ListItem extends Component{
   deleteHandler= () => {
-    // console.log('delete handler');
     console.log("this.props.item", this.props.item);
     this.props.onDelete(this.props.item);
   }

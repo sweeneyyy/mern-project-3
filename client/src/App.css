@@ -120,6 +120,9 @@ header{
   text-align: center;
   padding: 100px, 0px, 100px, 0px;
 }
+.profile{
+  padding: 100px, 0px, 100px, 0px;
+}
 
 .card-content {
   font-size: 24px;
@@ -175,9 +178,11 @@ header{
 .Search{
   padding-top: 320px;
 }
+
 .login-form{
   padding-top: 320px;
 }
-.signup-form{
+
+.signup-form {
   padding-top: 400px;
 }

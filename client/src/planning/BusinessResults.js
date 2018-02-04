@@ -6,7 +6,7 @@ class BusinessResults extends Component{
       <div className='row'>
           <div className="card small horizontal">
             <div className="card-image-business">
-              <img src={this.props.business.image_url} alt={this.props.business.name} />
+              <img src={this.props.business.image_url} alt="{this.props.business.name}" />
             </div>
                 <div className="card-stacked">
                   <div className="card-content">
@@ -21,7 +21,7 @@ class BusinessResults extends Component{
                     <ul>
                       <li className="restaurant-results">
                       <div className="card-action">
-                        <a href={this.props.business.url}><img className="yelp" src="https://i.imgur.com/cSLthnw.png" /></a>
+                        <a href={this.props.business.url}><img className="yelp" src="https://i.imgur.com/cSLthnw.png" alt="yelp"/></a>
                         <input type="button" value="save" id={this.props.business.id} onClick={this.props.saveClick} />
                         <hr />
                       </div>

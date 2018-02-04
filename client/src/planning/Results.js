@@ -17,7 +17,6 @@ class Results extends Component {
     this.setState({query: e.target.value});
   }
 
-
   preventing = (e) => {
     e.preventDefault();
     axios.post('/saved/results', {
@@ -30,25 +29,24 @@ class Results extends Component {
     })
   }
 
-
   saveClick = (e) => {
     e.preventDefault();
-    console.log('save click reached');
+    // console.log('save click reached');
     let businessToSave;
     for(let i = 0; i < this.state.businesses.length; i++){
       if(this.state.businesses[i].id === e.target.id){
         businessToSave = this.state.businesses[i];
-        console.log('for loop', this.state.businesses[i]);
+        // console.log('for loop', this.state.businesses[i]);
       }
     }
-    console.log('businessToSave', businessToSave);
-    console.log('user', this.props.user);
+    // console.log('businessToSave', businessToSave);
+
     //find user saved items to display on profile page
     axios.post('/saved/results/restaurantsaved', {
       business: businessToSave,
       user: this.props.user,
     }).then((res) => {
-      console.log("response data", res.data);
+      // console.log("response data", res.data);
     }).catch((err) => {
       console.log("err", err);
     })

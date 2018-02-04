@@ -113,7 +113,7 @@ class ListItem extends Component{
     return(
       <li className='packing-list-item'>
         {this.props.item}
-        <button className='' onClick={this.deleteHandler}>X</button>
+        <button className='deleteItem' onClick={this.deleteHandler}>X</button>
       </li>
     );
   }

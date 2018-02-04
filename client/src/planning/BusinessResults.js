@@ -3,10 +3,9 @@ import React, { Component } from 'react';
 class BusinessResults extends Component{
   render(){
     return(
-      <div className="row">
-        <div className="col s12">
+      <div className='row'>
           <div className="card horizontal">
-            <div className="card-image">
+            <div className="card-image-business">
               <img src={this.props.business.image_url} alt={this.props.business.name} />
             </div>
                 <div className="card-stacked">
@@ -28,10 +27,9 @@ class BusinessResults extends Component{
                       </div>
                         </li>
                     </ul>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-      </div>
     );
   }
 }

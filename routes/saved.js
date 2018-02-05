@@ -19,7 +19,6 @@ router.post('/results', function(req, res, callback){
   client.search(searchRequest).then(response => {
     const result = response.jsonBody;
     const prettyJson = JSON.stringify(result, null, 4);
-    // console.log("this is prettyJson", prettyJson);
     res.send(prettyJson);
   }).catch((err) => {
     console.log("error:", err);
@@ -28,11 +27,9 @@ router.post('/results', function(req, res, callback){
 
 // POST - save restaurant to db for user profile
 router.post('/results/restaurantsaved', function(req, res, callback){
-  console.log('backend', req.body)
   var userId = req.body.user.id;
   User.findById(userId)
     .exec(function(err, foundUser){
-      console.log("my current user", foundUser);
       if(err){
         res.status(500).json({error: err.message});
       } else {
@@ -43,14 +40,12 @@ router.post('/results/restaurantsaved', function(req, res, callback){
           "rating": req.body.business.rating,
           "category": req.body.business.categories[0].title
         });
-        console.log('#### Found User After Push', foundUser);//this console log works
         foundUser.save(function(err){
           if(err){
             console.log(err);
             return;
           }
-          // res.json(foundUser);
-        });//this line isnt working
+        });
         res.json(foundUser);
       }
   });
@@ -67,17 +62,14 @@ router.get('/profile/:id', function(req, res, callback){
 
 // POST packing list item to user db
 router.post('/profile/list/:userId', function(req, res, callback){
-  console.log('list post route', req.body);
   var { userId } = req.params;
   var items = req.body.list;
   User.findById(userId)
     .exec(function(err, foundUser){
-      console.log("my current user", foundUser);
       if(err){
         res.status(500).json({error: err.message});
       } else { //TODO check for duplicates!
         foundUser.list = items && items.length ? items : [];
-        console.log('Found user after list push', foundUser);
         foundUser.save(function(err){
           if(err){
             console.log(err);
@@ -91,10 +83,8 @@ router.post('/profile/list/:userId', function(req, res, callback){
 
 // DELETE packing list item from user db
 router.delete('/profile/list/:userId', function(req, res, next){
-  // console.log('######list delete route reached', req.body);
   const { userId } = req.params;
   User.findById(userId, function(err, user){
-    console.log('user to delete list item from', user)
     User.update({_id: userId}, { $set: {
       "list": req.body.list
     }}, function (err, user) {

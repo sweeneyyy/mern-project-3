@@ -21,7 +21,6 @@ class Results extends Component {
     axios.post('/saved/results', {
       location: this.state.query,
     }).then((res) => {
-      console.log(res.data);
       this.setState({businesses: res.data.businesses});
     }).catch((err) => {
       console.log("error:", err);
@@ -30,15 +29,12 @@ class Results extends Component {
 
   saveClick = (e) => {
     e.preventDefault();
-    // console.log('save click reached');
     let businessToSave;
     for(let i = 0; i < this.state.businesses.length; i++){
       if(this.state.businesses[i].id === e.target.id){
         businessToSave = this.state.businesses[i];
-        // console.log('for loop', this.state.businesses[i]);
       }
     }
-    // console.log('businessToSave', businessToSave);
 
     //find user saved items to display on profile page
     axios.post('/saved/results/restaurantsaved', {

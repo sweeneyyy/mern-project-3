@@ -43,11 +43,11 @@ class Profile extends Component {
           <h4 id="profile-heading">{this.props.user.name}'s Profile</h4>
             <div className="row">
               <div className="col s6 packing-list">
-                <p>Packing List:</p>
+                <h6>Packing List:</h6>
                 <List user={this.props.user} />
               </div>
               <div className="col s6">
-                <p>Saved Restaurants:</p>
+                <h6>Saved Restaurants:</h6>
                 {display}
               </div>
             </div>

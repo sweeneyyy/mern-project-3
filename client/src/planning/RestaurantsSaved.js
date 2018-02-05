@@ -14,8 +14,8 @@ class RestaurantsSaved extends Component{
                     <h5>{this.props.business.name}</h5>
                     <span><p>Category: <bold>{this.props.business.category} </bold>
                     | Rating: {this.props.business.rating}</p></span>
-                  <a href={this.props.business.url}><img className="yelp" src="https://i.imgur.com/cSLthnw.png" alt="yelp"/></a>
-                    <input type="button" value="X" id={this.props.business.id} onClick={this.props.saveClick} />
+                    <a href={this.props.business.url}><img className="yelp" src="https://i.imgur.com/cSLthnw.png" alt="yelp"/> </a>
+                    <button id={this.props.business.id} onClick={this.props.saveClick}><i class="small material-icons">delete</i></button>
                   </li>
                 </ul>
               </div>

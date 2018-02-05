@@ -16,9 +16,15 @@ nav a {
   color: #fff;
   font-family: 'Poppins', sans-serif;
 }
-
+button{
+  border-radius: 8px;
+}
 nav a:hover {
   color: #7f4dd2;
+}
+/*card content*/
+.card{
+  border-radius: 15px;
 }
 
 .footer {
@@ -175,12 +181,16 @@ header{
 .card-image-business img{
   max-height: 300px;
   max-width: 300px;
+  padding: 10px;
+  border-radius: 15px;
 }
 
 /*saved restaurants*/
 .card-image-saved img{
   max-height: 300px;
   max-width: 300px;
+  padding-top: 8px;
+  border-radius: 15px;
 }
 .restaurant-saved{
  /*text-align: center;*/
@@ -203,3 +213,8 @@ header{
   padding-top: 400px;
 }
 
+/*packing list*/
+.packing-list{
+  background: url('https://i.imgur.com/A7qKs0ml.jpg');
+  padding-right: 50px;
+}

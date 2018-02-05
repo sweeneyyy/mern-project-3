@@ -38,11 +38,11 @@ class Profile extends Component {
         <div className="row">
           <div className="container saved-business">
           <h4>Hello, {this.props.user.name}!</h4>
-          <div className="col s6">
+          <div className="col s6 packing-list">
             <List user={this.props.user} />
           </div>
           <div className="col s6">
-            <p>Saved restaurants:</p>
+            <h3>Saved restaurants:</h3>
             {display}
           </div>
           </div>

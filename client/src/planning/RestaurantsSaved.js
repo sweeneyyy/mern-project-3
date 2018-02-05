@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class RestaurantsSaved extends Component{
   render(){
     return(
-      <div class="card small">
+      <div class="card small z-depth-3">
         <div class="card-image">
           <img src={this.props.business.imgurl} alt={this.props.business.name} id="restaurants-saved-image" />
         </div>

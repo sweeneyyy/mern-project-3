@@ -4,7 +4,7 @@ import '../App.css';
 class About extends Component {
   render() {
     return(
-      <div className="About-container">
+      <div className="About-container z-depth-3">
       <section id="team">
         <h5>The Team</h5>
         <p id="team-description">A full-stack project for General Assembly Web Development Immersive created by:</p>

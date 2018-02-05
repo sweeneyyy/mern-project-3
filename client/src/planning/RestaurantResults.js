@@ -15,11 +15,7 @@ class RestaurantResults extends Component {
 		return(
       <div className="results-container container">
         <div className="row">
-
-            {names}
-            {/*}{console.log(this.props.businesses)}
-            {console.log(names)}*/}
-
+          {names}
         </div>
       </div>
 		);

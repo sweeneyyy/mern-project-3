@@ -1,9 +1,5 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
-// import createHistory from 'history/createBrowserHistory';
-
-// const history = createHistory();
-// const location = history.location;
 
 class Logout extends Component {
   constructor(props){

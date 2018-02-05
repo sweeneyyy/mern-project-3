@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
+// import createHistory from 'history/createBrowserHistory';
+
+// const history = createHistory();
+// const location = history.location;
 
 class Logout extends Component {
   constructor(props){
@@ -15,6 +19,7 @@ class Logout extends Component {
     localStorage.removeItem('mernToken');
     //Go back to home page
     this.props.updateUser();
+    // this.props.history.push('/')
     this.setState({ redirect: true });
   }
 

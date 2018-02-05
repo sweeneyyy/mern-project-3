@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import List from './planning/List.js';
 import RestaurantsSaved from './planning/RestaurantsSaved.js';
-// import EventsSaved from './planning/EventsSaved.js';
 import axios from 'axios';
 
 class Profile extends Component {

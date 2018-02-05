@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Search from './Search.js';
 import RestaurantResults from './RestaurantResults.js';
-// import EventResults from './EventResults.js';
 import axios from 'axios';
 
 class Results extends Component {

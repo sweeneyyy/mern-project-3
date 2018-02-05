@@ -13,7 +13,7 @@ class About extends Component {
           <div className="col s12 m4">
             <div className="card">
               <div className="card-image">
-                <img src="https://i.imgur.com/d2WbTpOm.jpg" alt="Winston" />
+                <img className="profile-pic" src="https://i.imgur.com/d2WbTpOm.jpg" alt="Winston" />
               </div>
               <div className="card-content team-members">
                 <a href="https://github.com/winstonsummers" className="team-link">Winston Summers</a>
@@ -23,7 +23,7 @@ class About extends Component {
           <div className="col s12 m4">
             <div className="card">
               <div className="card-image">
-                <img src="https://i.imgur.com/Xoe7tBpl.jpg?1" alt="Tony" />
+                <img className="profile-pic" src="https://i.imgur.com/Xoe7tBpl.jpg?1" alt="Tony" />
               </div>
               <div className="card-content">
                 <a href="https://github.com/rallysport206" className="team-link">Tony Phan</a>
@@ -33,7 +33,7 @@ class About extends Component {
           <div className="col s12 m4">
             <div className="card">
               <div className="card-image">
-                <img src="https://i.imgur.com/SMoWjxim.jpg?2" alt="Sweeney" />
+                <img className="profile-pic" src="https://i.imgur.com/SMoWjxim.jpg?2" alt="Sweeney" />
               </div>
               <div className="card-content">
                 <a href="https://github.com/sweeneyyy" className="team-link">Sweeney Arnett</a>

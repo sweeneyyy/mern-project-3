@@ -4,15 +4,12 @@ nav {
   padding: 10px 0;
 }
 
-.transparent {
-  background: rgba(0, 0, 0, 0.5);
-  /*background-color: transparent !important;*/
-}
-
 nav a {
   margin: 10px;
+  padding: 0px 30px 0px 30px;
   text-decoration: none;
-  font-size: 18px;
+  font-size: 22px;
+  text-shadow: 2px 2px 8px black;
   color: #fff;
   font-family: 'Poppins', sans-serif;
 }
@@ -38,6 +35,8 @@ nav a:hover {
 .footer-text {
   color: #fff;
   font-size: 10px;
+  text-shadow: 2px 2px 8px black;
+
 }
 
 .space {
@@ -105,6 +104,8 @@ nav a:hover {
 .App-title {
   font-size: 90px;
   padding-bottom: 10px;
+  text-shadow: 6px 6px 14px black;
+
 }
 
 .App-intro {
@@ -126,18 +127,13 @@ header{
   font-size: 20px;
   text-align: center;
   padding: 100px, 0px, 100px, 0px;
+
 }
-<<<<<<< HEAD
-.profile-save{
-  text-align: center;
-}
-=======
 
 #profile-heading{
   margin-bottom: 30px;
 }
 
->>>>>>> 07bd73801939873df2069e52d5e676d555eeb162
 .card-content {
   font-size: 24px;
 }
@@ -182,14 +178,14 @@ header{
   padding: 10px 0;
  /* font-weight: lighter;*/
 }
-.card-image{
-  border-top: 15px;
-}
 
 /*restaurant results*/
 .yelp{
   height: 30px;
   width: 30px;
+}
+.card-image{
+  border-radius: 15px;
 }
 .card-image-business img{
   max-height: 300px;
@@ -205,9 +201,6 @@ header{
   padding-top: 8px;
   border-radius: 15px;
 }
-<<<<<<< HEAD
-
-=======
 /*.card-content .saved{
   font-size: 16px;
 }*/
@@ -219,7 +212,6 @@ header{
   font-size: 20px;
   margin-top: 10px;
 }
->>>>>>> 07bd73801939873df2069e52d5e676d555eeb162
 .saved-business{
   padding-top: 320px;
 }
@@ -234,17 +226,14 @@ header{
 }
 
 .signup-form {
-  padding-top: 380px;
+  padding-top: 400px;
 }
 
 /*packing list*/
 .packing-list-container {
   background: url('https://i.imgur.com/A7qKs0ml.jpg');
-<<<<<<< HEAD
   background-size: cover;
   background-repeat: no-repeat;
-  border-radius: 15px;
-=======
   border-radius: 15px;
   padding-top: 30px;
 }
@@ -259,6 +248,4 @@ header{
   font-size: 20px;
   width: 400px;
   /*margin-right: 5px;*/
-
->>>>>>> 07bd73801939873df2069e52d5e676d555eeb162
 }

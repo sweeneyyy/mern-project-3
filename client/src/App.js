@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import createHistory from "history/createBrowserHistory";
 import './App.css';
 import axios from 'axios';
 import Flash from './layout/Flash.js';
@@ -12,6 +11,8 @@ import Profile from './Profile.js';
 import Signup from './auth/Signup.js';
 import About from './planning/About.js';
 import Results from './planning/Results.js';
+//To allow passing history object as props from Router
+import createHistory from "history/createBrowserHistory"; 
 
 const history = createHistory();
 

@@ -128,6 +128,10 @@ header{
   padding: 100px, 0px, 100px, 0px;
 }
 
+#profile-heading{
+  margin-bottom: 30px;
+}
+
 .card-content {
   font-size: 24px;
 }
@@ -192,10 +196,17 @@ header{
   padding-top: 8px;
   border-radius: 15px;
 }
-.restaurant-saved{
- /*text-align: center;*/
+/*.card-content .saved{
+  font-size: 16px;
+}*/
+#restaurants-saved{
+  font-size: 14px;
+  padding: 0;
 }
-
+#saved-rest-name{
+  font-size: 20px;
+  margin-top: 10px;
+}
 .saved-business{
   padding-top: 320px;
 }
@@ -214,7 +225,21 @@ header{
 }
 
 /*packing list*/
-.packing-list{
+.packing-list-container {
   background: url('https://i.imgur.com/A7qKs0ml.jpg');
-  padding-right: 50px;
+  border-radius: 15px;
+  padding-top: 30px;
+}
+
+#add-list-item {
+  width: 300px;
+}
+
+.packing-list-item {
+  padding: 15px 0;
+  font-family: 'Kalam', cursive !important;
+  font-size: 20px;
+  width: 400px;
+  /*margin-right: 5px;*/
+
 }

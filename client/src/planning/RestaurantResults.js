@@ -6,7 +6,7 @@ class RestaurantResults extends Component {
     var names = [];
     var businesses = this.props.businesses;
     if(businesses.length < 1){
-      names = <p>Search to get results!</p>
+      names = <p>What is your next destination?</p>
     }else{
       names = businesses.map((business) => {
         return (<BusinessResults business={business} saveClick={this.props.saveClick} />);

@@ -77,8 +77,8 @@ class List extends Component {
   }
 
   render() {
-    <h3 className="packing-list-title">Packing List</h3>
     return(
+      <h3 className="packing-list-title">Packing List</h3>
         <div className="packing-title">
       <div className="PackingList container">
           <PackingList items={this.state.toPack} onDelete={this.deleteItem} />

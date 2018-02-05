@@ -6,7 +6,7 @@ class BusinessResults extends Component{
       <div className='row'>
           <div className="card small horizontal">
             <div className="card-image-business">
-              <img src={this.props.business.image_url} alt="{this.props.business.name}" />
+              <img className='responsive-img' src={this.props.business.image_url} alt="{this.props.business.name}" />
             </div>
                 <div className="card-stacked">
                   <div className="card-content">

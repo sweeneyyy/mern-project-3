@@ -127,7 +127,9 @@ header{
   text-align: center;
   padding: 100px, 0px, 100px, 0px;
 }
-
+.profile-save{
+  text-align: center;
+}
 .card-content {
   font-size: 24px;
 }
@@ -172,6 +174,9 @@ header{
   padding: 10px 0;
  /* font-weight: lighter;*/
 }
+.card-image{
+  border-top: 15px;
+}
 
 /*restaurant results*/
 .yelp{
@@ -191,9 +196,6 @@ header{
   max-width: 300px;
   padding-top: 8px;
   border-radius: 15px;
-}
-.restaurant-saved{
- /*text-align: center;*/
 }
 
 .saved-business{
@@ -216,5 +218,7 @@ header{
 /*packing list*/
 .packing-list{
   background: url('https://i.imgur.com/A7qKs0ml.jpg');
-  padding-right: 50px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 15px;
 }

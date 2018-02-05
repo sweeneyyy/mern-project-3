@@ -6,7 +6,7 @@ class RestaurantsSaved extends Component{
         <div className='row'>
           <div className='card'>
                 <div className="card-image-saved">
-                  <img className="saved-img" src={this.props.business.imgurl} alt={this.props.business.name} />
+                  <img className="saved-img responsive-img" src={this.props.business.imgurl} alt={this.props.business.name} />
                 </div>
                 <div className="card-content">
                 <ul>

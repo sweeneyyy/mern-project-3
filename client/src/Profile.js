@@ -35,20 +35,19 @@ class Profile extends Component {
 
     if(this.props.user && this.props.user.name){
       return (
-        <div className="row profile-save">
           <div className="container saved-business">
-          <h4>Hello, {this.props.user.name}!</h4>
-          <h3>Packing List:</h3>
-          <div className="col s5 packing-list">
-            <List user={this.props.user} />
-          </div>
-          <div className='col s1'></div>
-          <div className="col s5">
-            <h3>Saved restaurants:</h3>
-            {display}
-          </div>
-          </div>
-        </div>);
+          <h4 id="profile-heading">{this.props.user.name}'s Profile</h4>
+            <div className="row">
+              <div className="col s6 packing-list">
+                <h4>Packing List:</h4>
+                <List user={this.props.user} />
+              </div>
+              <div className="col s6">
+                <h4>Saved Restaurants:</h4>
+                {display}
+              </div>
+            </div>
+          </div>);
     }
     else {
       return (<p>This is a profile page. You need to be logged in to view it.</p>);

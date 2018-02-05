@@ -3,24 +3,15 @@ import React, { Component } from 'react';
 class RestaurantsSaved extends Component{
   render(){
     return(
-        <div className='row'>
-          <div className='card'>
-                <div className="card-image-saved">
-                  <img className="saved-img responsive-img" src={this.props.business.imgurl} alt={this.props.business.name} />
-                </div>
-                <div className="card-content">
-                <ul>
-                  <li className="restaurants-saved">
-                    <h5>{this.props.business.name}</h5>
-                    <span><p>Category: <bold>{this.props.business.category} </bold>
-                    | Rating: {this.props.business.rating}</p></span>
-                    <a href={this.props.business.url}><img className="yelp" src="https://i.imgur.com/cSLthnw.png" alt="yelp"/> </a>
-                    <button id={this.props.business.id} onClick={this.props.saveClick}><i class="small material-icons">delete</i></button>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
+      <div class="card small">
+        <div class="card-image">
+          <img src={this.props.business.imgurl} alt={this.props.business.name} id="restaurants-saved-image" />
+        </div>
+        <div class="card-content" id="restaurants-saved">
+          <p id="saved-rest-name"><a href={this.props.business.url}><img className="yelp" src="https://i.imgur.com/cSLthnw.png" alt="yelp"/>{this.props.business.name}</a></p>
+          <span><p>{this.props.business.category} | Rating: {this.props.business.rating}</p></span>
+        </div>
+      </div>
     );
   }
 }

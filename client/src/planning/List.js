@@ -78,15 +78,15 @@ class List extends Component {
 
   render() {
     return(
-      <div className="packing-title">
-      <div className="PackingList container">
+
+        <div className="packing-list-container">
           <PackingList items={this.state.toPack} onDelete={this.deleteItem} />
           <form>
-            <input type='text' className='form-control' placeholder='add something to pack' onChange={this.newItemChange} value={this.state.newItem} />
-            <button className='' onClick={this.add}>Add</button>
+            <input type='text' className='form-control' id="add-list-item" placeholder='add something to pack' onChange={this.newItemChange} value={this.state.newItem} />
+            <button className='add-item' onClick={this.add}>Add</button>
           </form>
         </div>
-      </div>
+
     );
   }
 }
@@ -114,7 +114,7 @@ class ListItem extends Component{
     return(
       <li className='packing-list-item'>
         {this.props.item}
-        <button className='deleteItem' onClick={this.deleteHandler}> X</button>
+        <button className='right' onClick={this.deleteHandler}> X</button>
       </li>
     );
   }

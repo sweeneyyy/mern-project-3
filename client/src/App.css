@@ -127,9 +127,17 @@ header{
   text-align: center;
   padding: 100px, 0px, 100px, 0px;
 }
+<<<<<<< HEAD
 .profile-save{
   text-align: center;
 }
+=======
+
+#profile-heading{
+  margin-bottom: 30px;
+}
+
+>>>>>>> 07bd73801939873df2069e52d5e676d555eeb162
 .card-content {
   font-size: 24px;
 }
@@ -197,7 +205,21 @@ header{
   padding-top: 8px;
   border-radius: 15px;
 }
+<<<<<<< HEAD
 
+=======
+/*.card-content .saved{
+  font-size: 16px;
+}*/
+#restaurants-saved{
+  font-size: 14px;
+  padding: 0;
+}
+#saved-rest-name{
+  font-size: 20px;
+  margin-top: 10px;
+}
+>>>>>>> 07bd73801939873df2069e52d5e676d555eeb162
 .saved-business{
   padding-top: 320px;
 }
@@ -216,9 +238,27 @@ header{
 }
 
 /*packing list*/
-.packing-list{
+.packing-list-container {
   background: url('https://i.imgur.com/A7qKs0ml.jpg');
+<<<<<<< HEAD
   background-size: cover;
   background-repeat: no-repeat;
   border-radius: 15px;
+=======
+  border-radius: 15px;
+  padding-top: 30px;
+}
+
+#add-list-item {
+  width: 300px;
+}
+
+.packing-list-item {
+  padding: 15px 0;
+  font-family: 'Kalam', cursive !important;
+  font-size: 20px;
+  width: 400px;
+  /*margin-right: 5px;*/
+
+>>>>>>> 07bd73801939873df2069e52d5e676d555eeb162
 }

@@ -89,7 +89,7 @@ class App extends Component {
                 () => (<Login user={this.state.user} setFlash={this.setFlash} updateUser={this.getUser} />)} />
               <Route path="/signup" component={
                 () => (<Signup user={this.state.user} setFlash={this.setFlash} updateUser={this.getUser} />)} />
-              <Route path="/saved/profile" component={
+              <Route path="/saved/profile" component={ //added history as object to pass as props to fix logout
                 (props) => (<Profile user={this.state.user} setFlash={this.setFlash} {...props} />)} />
             </div>
           </div>

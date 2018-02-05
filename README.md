@@ -8,7 +8,8 @@ A full-stack MERN app created by Winston Summers, Tony Phan and Sweeney Arnett
 * Node.js
 * HTML, CSS, Javascript
 * Materialize
-* Live site on Heroku
+* Live site on [Heroku](https://venture-js.herokuapp.com/)
+![alt text](https://i.imgur.com/h0e0LaAl.png)
 
 ## Backend Routes
 METHOD | URL | Purpose
@@ -28,8 +29,6 @@ DELETE | /profile/list/:userId | Removes a user's packing list item from the dat
 #### Wireframes:
 ![alt text](https://i.imgur.com/VM5v76jl.png)
 ![alt text](https://i.imgur.com/zLla9Tal.png)
-#### Progression:
-![alt text](https://i.imgur.com/IJcKOdZ.png)
 
 ## Resources Used
 * Yelp API

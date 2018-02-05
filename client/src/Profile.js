@@ -14,12 +14,16 @@ class Profile extends Component {
   }
 
   componentWillMount() {
-    axios.get('/saved/profile/' + this.props.user.id).then((res) => {
-      this.setState({
-        restaurants: res.data.restaurant,
-        user: this.props.user
+    if (this.props.user && this.props.user.id) {
+      axios.get('/saved/profile/' + this.props.user.id).then((res) => {
+        this.setState({
+          restaurants: res.data.restaurant,
+          user: this.props.user
+        });
       });
-    });
+    }else {
+      this.props.history.push('/');
+    }
   }
 
   render(){
@@ -39,11 +43,11 @@ class Profile extends Component {
           <h4 id="profile-heading">{this.props.user.name}'s Profile</h4>
             <div className="row">
               <div className="col s6 packing-list">
-                <h4>Packing List:</h4>
+                <h6>Packing List:</h6>
                 <List user={this.props.user} />
               </div>
               <div className="col s6">
-                <h4>Saved Restaurants:</h4>
+                <h6>Saved Restaurants:</h6>
                 {display}
               </div>
             </div>

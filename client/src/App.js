@@ -11,6 +11,10 @@ import Profile from './Profile.js';
 import Signup from './auth/Signup.js';
 import About from './planning/About.js';
 import Results from './planning/Results.js';
+//To allow passing history object as props from Router
+import createHistory from "history/createBrowserHistory"; 
+
+const history = createHistory();
 
 class App extends Component {
   constructor(props){
@@ -72,7 +76,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Router>
+        <Router history={history}>
           <div>
             <Nav user={this.state.user} updateUser={this.getUser} />
             <div className="space">
@@ -86,7 +90,7 @@ class App extends Component {
               <Route path="/signup" component={
                 () => (<Signup user={this.state.user} setFlash={this.setFlash} updateUser={this.getUser} />)} />
               <Route path="/saved/profile" component={
-                () => (<Profile user={this.state.user} setFlash={this.setFlash} />)} />
+                (props) => (<Profile user={this.state.user} setFlash={this.setFlash} {...props} />)} />
             </div>
           </div>
         </Router>

@@ -26,9 +26,9 @@ class BusinessResults extends Component{
                       </div>
                         </li>
                     </ul>
-                </div>
               </div>
             </div>
+          </div>
     );
   }
 }

@@ -1,5 +1,5 @@
 # Summary
-A full-stack MERN app created by Winston Summers, Tony Phan and Sweeney Arnett!
+A full-stack MERN app created by Winston Summers, Tony Phan and Sweeney Arnett
 
 ## Technologies Used
 * MongoDb
@@ -26,7 +26,7 @@ DELETE | /profile/list/:userId | Removes a user's packing list item from the dat
 #### Planned Sprints in Trello:
 ![alt text](https://i.imgur.com/xOBzW99l.png)
 #### Wireframes:
-![alt text](https://i.imgur.com/VM5v76jl.png) ![alt text](https://i.imgur.com/HA1nE8Sl.png)
+![alt text](https://i.imgur.com/VM5v76jl.png)
 ![alt text](https://i.imgur.com/zLla9Tal.png)
 #### Progression:
 ![alt text](https://i.imgur.com/IJcKOdZ.png)

@@ -79,7 +79,7 @@ class List extends Component {
   render() {
     return(
 
-        <div className="packing-list-container">
+        <div className="packing-list-container z-depth-3">
           <PackingList items={this.state.toPack} onDelete={this.deleteItem} />
           <form>
             <input type='text' className='form-control' id="add-list-item" placeholder='add something to pack' onChange={this.newItemChange} value={this.state.newItem} />

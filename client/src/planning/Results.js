@@ -66,7 +66,7 @@ class Results extends Component {
     return(
       <div className="container Results">
         <div className="row">
-          <div className="col s12 m6 l3">{results}</div>
+          <div className="col s12 m6 l3 z-depth-3">{results}</div>
           <Search query={this.state.query} handleInputChange={(event) => this.handleInputChange(event)} preventing={this.preventing} onSubmit={this.handleSubmit} />
           <RestaurantResults businesses={this.state.businesses} saveClick={this.saveClick} />
         </div>

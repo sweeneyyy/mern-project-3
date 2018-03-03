@@ -22,15 +22,13 @@ class Nav extends Component {
 
     return(
         <div class="navbar-fixed">
-          <nav class="transparent">
+          <nav class="transparent z-depth-0">
             <div class="nav-wrapper">
-              <div class="row">
                 <div class="col s12">
                   <a href="/">Home</a>
                   <a href="/#team">Team</a>
                   <Link to="/results">Search</Link>
                   {links}
-                </div>
               </div>
             </div>
           </nav>

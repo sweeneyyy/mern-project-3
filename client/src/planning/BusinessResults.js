@@ -24,8 +24,9 @@ class BusinessResults extends Component{
                       <a href={this.props.business.url}><img className="yelp" src="https://i.imgur.com/cSLthnw.png" alt="yelp"/></a>
                       <input type="button" value="Save" id={this.props.business.id} onClick={this.props.saveClick} />
                     </div>
+
                       </li>
-                  </ul>
+                    </ul>
               </div>
             </div>
           </div>

@@ -21,7 +21,7 @@ class Profile extends Component {
           user: this.props.user
         });
       });
-    }else {
+    }else { //if no user then redirect home
       this.props.history.push('/');
     }
   }

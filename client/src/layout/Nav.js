@@ -10,33 +10,35 @@ class Nav extends Component {
         <span>
           <Link to="/saved/profile">Profile</Link>
           <Logout updateUser={this.props.updateUser} />
-        </span>);
+        </span>
+      );
     }
     else {
       links = (
         <span>
           <Link to="/login">Login</Link>
           <Link to="/signup">Sign Up</Link>
-        </span>);
+        </span>
+      );
     }
 
     return(
-        <div class="navbar-fixed">
-          <nav class="transparent z-depth-0">
-            <div class="nav-wrapper">
-                <div class="col s12">
-                  <a href="/">Home</a>
-                  <a href="/#team">Team</a>
-                  <Link to="/results">Search</Link>
-                  {links}
-              </div>
+      <div className="navbar-fixed">
+        <nav className="transparent z-depth-0">
+          <div className="nav-wrapper">
+            <div className="col s12">
+              <a href="/">Home</a>
+              <a href="/#team">Team</a>
+              <Link to="/results">Search</Link>
+                {links}
             </div>
-          </nav>
-          <header className="App-header">
-            <p className="App-title"><i className="large material-icons left">card_travel</i>Venture!</p>
-          </header>
-        </div>
-      );
+          </div>
+        </nav>
+        <header className="App-header">
+          <p className="App-title"><i className="large material-icons left">card_travel</i>Venture!</p>
+        </header>
+      </div>
+    );
   }
 }
 

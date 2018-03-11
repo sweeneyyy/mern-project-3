@@ -3,7 +3,7 @@ import { Redirect } from 'react-router-dom';
 import axios from 'axios';
 
 class Signup extends Component {
-  constructor(props) {
+  constructor(props){
     super(props)
     this.state = {
       name: '',
@@ -34,7 +34,7 @@ class Signup extends Component {
     }).catch(error => {
       console.log(error.response);
       this.props.setFlash('error', error.response.status + ': ' + (error.response.data && error.response.data.error ? error.response.data.message : error.response.statusText));
-    })
+    });
   }
 
   render() {
@@ -48,8 +48,7 @@ class Signup extends Component {
                   <input name="Name"
                        placeholder="What is your first name?"
                        value={this.state.name}
-                       onChange={this.handleNameChange}
-                  />
+                       onChange={this.handleNameChange} />
                 </div>
                 <div>
                   <input name="Email"
@@ -65,9 +64,9 @@ class Signup extends Component {
                      onChange={this.handlePasswordChange} />
                  </div>
                  <button type="submit" value="Sign up!" class="waves-effect waves-teal btn-flat">Sign Up<i class="material-icons left">create</i></button>
-              </form>);
+        </form>);
     }
-    return (
+    return(
       <div className="signup-form">
         <div className="container">
           {form}

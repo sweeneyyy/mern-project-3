@@ -15,4 +15,5 @@ class RestaurantsSaved extends Component{
     );
   }
 }
+
 export default RestaurantsSaved;

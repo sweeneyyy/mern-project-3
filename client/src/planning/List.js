@@ -36,9 +36,8 @@ class List extends Component {
       console.log("removed item from list", item)
     }).catch((err) => {
       console.log("err", err);
-    })
+    });
   }
-
 
   // Add new item to the users list
   add = (e) => {
@@ -56,9 +55,8 @@ class List extends Component {
         console.log("updated user list", res.data)
       }).catch((err) => {
         console.log("err", err);
-      })
+      });
     }
-
     else{
       this.setState({error: 'Please enter something to pack'})
     }
@@ -78,15 +76,13 @@ class List extends Component {
 
   render() {
     return(
-
-        <div className="packing-list-container z-depth-3">
-          <PackingList items={this.state.toPack} onDelete={this.deleteItem} />
+      <div className="packing-list-container z-depth-3">
+        <PackingList items={this.state.toPack} onDelete={this.deleteItem} />
           <form>
             <input type='text' className='form-control' id="add-list-item" placeholder='add something to pack' onChange={this.newItemChange} value={this.state.newItem} />
             <button className='add-item' onClick={this.add}>Add</button>
           </form>
-        </div>
-
+      </div>
     );
   }
 }
@@ -96,7 +92,7 @@ class PackingList extends Component{
     const packingItems = this.props.items.map(thing =>{
       return (<ListItem key={thing} item={thing} onDelete={this.props.onDelete} />);
     });
-    return (
+    return(
       <ul className='list-group'>
         {packingItems}
       </ul>
@@ -105,7 +101,7 @@ class PackingList extends Component{
 }
 
 class ListItem extends Component{
-  deleteHandler= () => {
+  deleteHandler = () => {
     console.log("this.props.item", this.props.item);
     this.props.onDelete(this.props.item);
   }
@@ -119,6 +115,5 @@ class ListItem extends Component{
     );
   }
 }
-
 
 export default List;

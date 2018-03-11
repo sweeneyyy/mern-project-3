@@ -12,6 +12,7 @@ class RestaurantResults extends Component {
         return (<BusinessResults business={business} saveClick={this.props.saveClick} />);
       });
     }
+
 		return(
       <div className="results-container container">
         <div className="row">
@@ -21,7 +22,5 @@ class RestaurantResults extends Component {
 		);
 	}
 }
-
-
 
 export default RestaurantResults;

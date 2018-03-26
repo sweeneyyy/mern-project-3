@@ -11,6 +11,7 @@ A full-stack MERN app created by Winston Summers, Tony Phan and Sweeney Arnett
 * Live site on [Heroku](https://venture-js.herokuapp.com/)
 ***
 ![alt text](https://i.imgur.com/h0e0LaAl.png)
+![alt text](https://i.imgur.com/mfg7VbD.png)
 
 ## Backend Routes
 METHOD | URL | Purpose

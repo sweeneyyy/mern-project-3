@@ -2,7 +2,7 @@
 A full-stack MERN app created by Winston Summers, Tony Phan and Sweeney Arnett
 
 ## Technologies Used
-* MongoDb
+* MongoDB
 * Express
 * React
 * Node.js

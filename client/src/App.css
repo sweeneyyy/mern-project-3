@@ -68,13 +68,16 @@ header {
 }
 
 .error {
-  background-color: pink;
-  color: red;
-  border: 1px solid red;
+  background-color: #ffcdd2;
+  color: #ef5350;
+  border: 1px solid #ef5350;
   border-radius: 2px;
   padding: 10px 30px;
-  width: 75%;
-  margin: 10px auto;
+  width: 90%;
+  margin: auto;
+  position: absolute;
+  top: 60%;
+  left: 39px;
 }
 
 .success {
@@ -85,6 +88,8 @@ header {
   padding: 10px 30px;
   width: 75%;
   margin: 10px auto;
+  position: relative;
+  z-index: 99;
 }
 
 .no-flash {
@@ -95,7 +100,7 @@ header {
 }
 
 .x-button {
-  background-color: red;
+  background-color: #ef5350;
   color: white;
   border-radius: 2px;
   float: right;
@@ -113,7 +118,19 @@ header {
 }
 
 #profile-heading {
-  margin-bottom: 30px;
+  margin-bottom: 40px;
+}
+
+.profile-body {
+  margin-bottom: 200px;
+}
+
+#profile-empty-search a{
+  font-size: 14px;
+}
+
+#profile-pack, #profile-search {
+  margin-bottom: 25px;
 }
 
 .card-content {
@@ -202,6 +219,10 @@ header {
   padding-top: 320px;
 }
 
+.results-display {
+  margin-bottom: 50px;
+}
+
 /* SEARCH CONTAINER */
 .Search {
   padding-top: 320px;
@@ -209,6 +230,8 @@ header {
 
 .login-form {
   padding-top: 320px;
+  margin-top: 150px;
+  margin-bottom: 80px;
 }
 
 .signup-form {
@@ -234,6 +257,10 @@ header {
   font-size: 20px;
   width: 400px;
   /*margin-right: 5px;*/
+}
+
+.packing-list-delete {
+  margin-left: 10px;
 }
 
 /* FOOTER */

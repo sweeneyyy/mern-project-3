@@ -7,7 +7,7 @@ class List extends Component {
     super(props)
     this.state = {
       error: '',
-      toPack: [],
+      toPack: ['Socks', 'Toothbrush', 'Passport!'],
       newItem: ''
     }
   }
@@ -110,7 +110,7 @@ class ListItem extends Component{
     return(
       <li className='packing-list-item'>
         {this.props.item}
-        <button className='right' onClick={this.deleteHandler}> X</button>
+        <button className='packing-list-delete' onClick={this.deleteHandler}> X</button>
       </li>
     );
   }

@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class BusinessResults extends Component{
   render(){
     return(
-      <div className="row">
+      <div className="row results-display">
         <div className="card small horizontal">
           <div className="card-image-business">
             <img className="responsive-img" src={this.props.business.image_url} alt="{this.props.business.name}" />

@@ -8,7 +8,7 @@ class Results extends Component {
     super(props)
     this.state = {
       query: '',
-      businesses:[]
+      businesses:[],
     }
     this.handleInputChange = this.handleInputChange.bind(this);
   }

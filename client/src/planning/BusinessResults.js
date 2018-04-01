@@ -1,6 +1,19 @@
 import React, { Component } from 'react';
 
 class BusinessResults extends Component{
+  constructor(props){
+    super(props)
+    this.state = {
+      value: 'Save'
+    }
+    this.updateButton = this.updateButton.bind(this);
+  }
+
+  updateButton(e){
+    this.props.saveClick(e);
+    this.setState({ value: 'Saved!' })
+  }
+
   render(){
     return(
       <div className="row results-display">
@@ -12,9 +25,9 @@ class BusinessResults extends Component{
               <div className="card-content">
                 <ul>
                   <li className="restaurant-results">
-                    <h5>{this.props.business.name}</h5>
-                    <span><p>Category: <bold>{this.props.business.categories[0].title} </bold>
-                    | Rating: {this.props.business.rating}</p></span>
+                    <p id="results-rest-name"><a href={this.props.business.url}><img className="yelp" src="https://i.imgur.com/cSLthnw.png" alt="yelp"/>{this.props.business.name}</a></p>
+                    <p className="rest-results-detail">Rating: {this.props.business.rating}</p>
+                    <p className="rest-results-detail"><bold>{this.props.business.categories[0].title} </bold></p>
                   </li>
                 </ul>
               </div>
@@ -22,7 +35,7 @@ class BusinessResults extends Component{
                   <li className="restaurant-results">
                     <div className="card-action">
                       <a href={this.props.business.url}><img className="yelp" src="https://i.imgur.com/cSLthnw.png" alt="yelp"/></a>
-                      <input type="button" value="Save" id={this.props.business.id} onClick={this.props.saveClick} />
+                      <input type="button" value={this.state.value} id={this.props.business.id} onClick={this.updateButton} />
                     </div>
                   </li>
                 </ul>

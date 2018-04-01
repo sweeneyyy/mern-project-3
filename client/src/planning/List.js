@@ -7,14 +7,14 @@ class List extends Component {
     super(props)
     this.state = {
       error: '',
-      toPack: ['Socks', 'Toothbrush', 'Passport!'],
+      toPack: [],
       newItem: ''
     }
   }
   // Clear entire packing list
-  clear = () => {
-    this.setState({ toPack: [] });
-  }
+  // clear = () => {
+  //   this.setState({ toPack: [] });
+  // }
 
   // Delete a single item from the list
   deleteItem = (item) => {
@@ -102,7 +102,6 @@ class PackingList extends Component{
 
 class ListItem extends Component{
   deleteHandler = () => {
-    console.log("this.props.item", this.props.item);
     this.props.onDelete(this.props.item);
   }
 

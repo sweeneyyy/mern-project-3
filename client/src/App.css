@@ -76,7 +76,7 @@ header {
   width: 90%;
   margin: auto;
   position: absolute;
-  top: 60%;
+  top: 450px;
   left: 39px;
 }
 
@@ -154,8 +154,6 @@ header {
   border: 1px solid rgba(0, 0, 0, 0.8);
   border-radius: 10px;
   height: 300px;
-  /*margin: 3px;*/
-  /*padding: 10px 20px;*/
   font-size: 20px;
   text-align: center;
 }
@@ -173,7 +171,6 @@ header {
 #team-description {
   font-size: 18px;
   padding: 10px 0;
- /* font-weight: lighter;*/
 }
 
 /* RESTAURANT RESULTS */
@@ -193,6 +190,20 @@ header {
   border-radius: 15px;
 }
 
+.restaurant-results input {
+  outline: none;
+}
+
+#results-rest-name {
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+.rest-results-detail {
+  font-size: 20px;
+  margin: 10px 0;
+}
+
 /* SAVED RESTAURANTS */
 .card-image-saved img {
   max-height: 300px;
@@ -200,10 +211,6 @@ header {
   padding-top: 8px;
   border-radius: 15px;
 }
-
-/*.card-content .saved{
-  font-size: 16px;
-}*/
 
 #restaurants-saved {
   font-size: 14px;
@@ -236,6 +243,7 @@ header {
 
 .signup-form {
   padding-top: 400px;
+  margin-bottom: 80px;
 }
 
 /* PACKING LIST */
@@ -256,7 +264,6 @@ header {
   font-family: 'Kalam', cursive !important;
   font-size: 20px;
   width: 400px;
-  /*margin-right: 5px;*/
 }
 
 .packing-list-delete {

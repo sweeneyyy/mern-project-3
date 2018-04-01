@@ -204,6 +204,25 @@ header {
   margin: 10px 0;
 }
 
+@media screen and (max-width: 600px) {
+  .card-image-business img {
+    max-height: 200px;
+    max-width: 200px;
+    border-radius: 15px;
+    padding: 0;
+  }
+  #results-rest-name {
+    font-size: 12px;
+    margin-top: 5px
+  }
+  .rest-results-detail {
+    display: none;
+  }
+  .card.small {
+    height: 195px;
+  }
+}
+
 /* SAVED RESTAURANTS */
 .card-image-saved img {
   max-height: 300px;

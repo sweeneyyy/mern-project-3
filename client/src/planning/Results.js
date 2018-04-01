@@ -55,11 +55,7 @@ class Results extends Component {
     if(this.state.businesses){
       results = res.map((b)=> {
         <div className="container Results">
-          <div className="row">
-            <div className="col s12 m6 l3">
-              <li>b</li>
-            </div>
-          </div>
+          <li>b</li>
         </div>
       });
     }else{
@@ -70,7 +66,7 @@ class Results extends Component {
     return(
       <div className="container Results">
         <div className="row">
-          <div className="col s12 m6 l3 z-depth-3">{results}</div>
+          <div className="col s12 m6 z-depth-3">{results}</div>
             <Search query={this.state.query} handleInputChange={(event) => this.handleInputChange(event)} preventing={this.preventing} onSubmit={this.handleSubmit} />
             <RestaurantResults businesses={this.state.businesses} saveClick={this.saveClick} />
           </div>

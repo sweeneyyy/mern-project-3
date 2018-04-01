@@ -14,7 +14,7 @@ class Profile extends Component {
   }
 
   componentWillMount() {
-    if (this.props.user && this.props.user.id) {
+    if(this.props.user && this.props.user.id) {
       axios.get('/saved/profile/' + this.props.user.id).then((res) => {
         this.setState({
           restaurants: res.data.restaurant,

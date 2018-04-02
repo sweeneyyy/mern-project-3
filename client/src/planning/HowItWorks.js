@@ -12,13 +12,8 @@ class HowItWorks extends Component {
           </div>
         </div>
       </div>
-    )
+    );
   }
 }
-
-
-
-
-
 
 export default HowItWorks;

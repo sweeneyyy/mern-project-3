@@ -14,10 +14,11 @@ class Flash extends Component {
       return (
         <div className={flashType}>
           {this.props.flash} <button className="x-button" onClick={this.cancelMessage}>X</button>
-        </div>);
+        </div>
+      );
     }
     else {
-      return (<div className="no-flash">No Flash</div>);
+      return(<div className="no-flash">No Flash</div>);
     }
   }
 }

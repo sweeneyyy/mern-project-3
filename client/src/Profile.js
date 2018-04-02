@@ -14,7 +14,7 @@ class Profile extends Component {
   }
 
   componentWillMount() {
-    if (this.props.user && this.props.user.id) {
+    if(this.props.user && this.props.user.id) {
       axios.get('/saved/profile/' + this.props.user.id).then((res) => {
         this.setState({
           restaurants: res.data.restaurant,
@@ -30,7 +30,7 @@ class Profile extends Component {
     var display;
     var savedBusiness = this.state.restaurants;
     if(savedBusiness.length < 1){
-      display = <p>Go save some restaurants!</p>
+      display = <p id="profile-empty-search"><a href="/results">Go save some restaurants!</a></p>
     }else {
       display = savedBusiness.map((business) => {
         return(<RestaurantsSaved business={business} />);
@@ -40,14 +40,14 @@ class Profile extends Component {
     if(this.props.user && this.props.user.name){
       return (
           <div className="container saved-business">
-          <h4 id="profile-heading">{this.props.user.name}'s Profile</h4>
-            <div className="row">
-              <div className="col s6 packing-list">
-                <h6>Packing List:</h6>
+          <h3 id="profile-heading">{this.props.user.name}'s Profile</h3>
+            <div className="row profile-body">
+              <div className="col s12 m6 packing-list">
+                <h5 id="profile-pack">Packing List:</h5>
                 <List user={this.props.user} />
               </div>
-              <div className="col s6">
-                <h6>Saved Restaurants:</h6>
+              <div className="col s12 m6">
+                <h5 id="profile-search">Saved Restaurants:</h5>
                 {display}
               </div>
             </div>
